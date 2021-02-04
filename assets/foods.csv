@@ -1,0 +1,593 @@
+name,standard_quantity,standard_quantity_unit,energy_kcal,energy_kj,proteins,fats,carbs
+"Arroz, integral, cozido",100,g,124,517,2.6,1,25.8
+"Arroz, integral, cru",100,g,360,1505,7.3,1.9,77.5
+"Arroz, tipo 1, cozido",100,g,128,537,2.5,0.2,28.1
+"Arroz, tipo 1, cru",100,g,358,1497,7.2,0.3,78.8
+"Arroz, tipo 2, cozido",100,g,130,544,2.6,0.4,28.2
+"Arroz, tipo 2, cru",100,g,358,1498,7.2,0.3,78.9
+"Aveia, flocos, crua",100,g,394,1648,13.9,8.5,66.6
+"Biscoito, doce, maisena",100,g,443,1853,8.1,12,75.2
+"Biscoito, doce, recheado com chocolate",100,g,472,1974,6.4,19.6,70.5
+"Biscoito, doce, recheado com morango",100,g,471,1971,5.7,19.6,71
+"Biscoito, doce, wafer, recheado de chocolate",100,g,502,2102,5.6,24.7,67.5
+"Biscoito, doce, wafer, recheado de morango",100,g,513,2148,4.5,26.4,67.4
+"Biscoito, salgado, cream cracker",100,g,432,1806,10.1,14.4,68.7
+"Bolo, mistura para",100,g,419,1752,6.2,6.1,84.7
+"Bolo, pronto, aipim",100,g,324,1355,4.4,12.7,47.9
+"Bolo, pronto, chocolate",100,g,410,1715,6.2,18.5,54.7
+"Bolo, pronto, coco",100,g,333,1395,5.7,11.3,52.3
+"Bolo, pronto, milho",100,g,311,1303,4.8,12.4,45.1
+"Canjica, branca, crua",100,g,358,1496,7.2,1,78.1
+"Canjica, com leite integral",100,g,112,471,2.4,1.2,23.6
+"Cereais, milho, flocos, com sal",100,g,370,1546,7.3,1.6,80.8
+"Cereais, milho, flocos, sem sal",100,g,363,1520,6.9,1.2,80.4
+"Cereais, mingau, milho, infantil",100,g,394,1650,6.4,1.1,87.3
+"Cereais, mistura para vitamina, trigo, cevada e aveia",100,g,381,1595,8.9,2.1,81.6
+"Cereal matinal, milho",100,g,365,1529,7.2,1,83.8
+"Cereal matinal, milho, açúcar",100,g,377,1576,4.7,0.7,88.8
+"Creme de arroz, pó",100,g,386,1615,7,1.2,83.9
+"Creme de milho, pó",100,g,333,1393,4.8,1.6,86.1
+"Curau, milho verde",100,g,78,328,2.4,1.6,13.9
+"Curau, milho verde, mistura para",100,g,402,1683,2.2,13.4,79.8
+"Farinha, de arroz, enriquecida",100,g,363,1519,1.3,0.3,85.5
+"Farinha, de centeio, integral",100,g,336,1405,12.5,1.8,73.3
+"Farinha, de milho, amarela",100,g,351,1467,7.2,1.5,79.1
+"Farinha, de rosca",100,g,371,1550,11.4,1.5,75.8
+"Farinha, de trigo",100,g,360,1508,9.8,1.4,75.1
+"Farinha, láctea, de cereais",100,g,415,1736,11.9,5.8,77.8
+"Lasanha, massa fresca, cozida",100,g,164,685,5.8,1.2,32.5
+"Lasanha, massa fresca, crua",100,g,220,922,7,1.3,45.1
+"Macarrão, instantâneo",100,g,436,1824,8.8,17.2,62.4
+"Macarrão, trigo, cru",100,g,371,1553,10,1.3,77.9
+"Macarrão, trigo, cru, com ovos",100,g,371,1550,10.3,2,76.6
+"Milho, amido, cru",100,g,361,1512,0.6,0,87.1
+"Milho, fubá, cru",100,g,353,1479,7.2,1.9,78.9
+"Milho, verde, cru",100,g,138,578,6.6,0.6,28.6
+"Milho, verde, enlatado, drenado",100,g,98,408,3.2,2.4,17.1
+"Mingau tradicional, pó",100,g,373,1562,0.6,0.4,89.3
+"Pamonha, barra para cozimento, pré-cozida",100,g,171,716,2.6,4.8,30.7
+"Pão, aveia, forma",100,g,343,1435,12.4,5.7,59.6
+"Pão, de soja",100,g,309,1292,11.3,3.6,56.5
+"Pão, glúten, forma",100,g,253,1059,12,2.7,44.1
+"Pão, milho, forma",100,g,292,1222,8.3,3.1,56.4
+"Pão, trigo, forma, integral",100,g,253,1059,9.4,3.7,49.9
+"Pão, trigo, francês",100,g,300,1254,8,3.1,58.6
+"Pão, trigo, sovado",100,g,311,1301,8.4,2.8,61.5
+"Pastel, de carne, cru",100,g,289,1208,10.7,8.8,42
+"Pastel, de carne, frito",100,g,388,1625,10.1,20.1,43.8
+"Pastel, de queijo, cru",100,g,308,1291,9.9,9.6,45.9
+"Pastel, de queijo, frito",100,g,422,1766,8.7,22.7,48.1
+"Pastel, massa, crua",100,g,310,1298,6.9,5.5,57.4
+"Pastel, massa, frita",100,g,570,2384,6,40.9,49.3
+"Pipoca, com óleo de soja, sem sal",100,g,448,1876,9.9,15.9,70.3
+"Polenta, pré-cozida",100,g,103,430,2.3,0.3,23.3
+"Torrada, pão francês",100,g,377,1579,10.5,3.3,74.6
+"Abóbora, cabotian, cozida",100,g,48,201,1.4,0.7,10.8
+"Abóbora, cabotian, crua",100,g,39,161,1.7,0.5,8.4
+"Abóbora, menina brasileira, crua",100,g,14,57,0.6,0,3.3
+"Abóbora, moranga, crua",100,g,12,52,1,0.1,2.7
+"Abóbora, moranga, refogada",100,g,29,121,0.4,0.8,6
+"Abóbora, pescoço, crua",100,g,24,102,0.7,0.1,6.1
+"Abobrinha, italiana, cozida",100,g,15,63,1.1,0.2,3
+"Abobrinha, italiana, crua",100,g,19,81,1.1,0.1,4.3
+"Abobrinha, italiana, refogada",100,g,24,102,1.1,0.8,4.2
+"Abobrinha, paulista, crua",100,g,31,129,0.6,0.1,7.9
+"Acelga, crua",100,g,21,88,1.4,0.1,4.6
+"Agrião, cru",100,g,17,69,2.7,0.2,2.3
+"Aipo, cru",100,g,19,80,0.8,0.1,4.3
+"Alface, americana, crua",100,g,9,37,0.6,0.1,1.7
+"Alface, crespa, crua",100,g,11,45,1.3,0.2,1.7
+"Alface, lisa, crua",100,g,14,58,1.7,0.1,2.4
+"Alface, roxa, crua",100,g,13,53,0.9,0.2,2.5
+"Alfavaca, crua",100,g,29,122,2.7,0.5,5.2
+"Alho, cru",100,g,113,473,7,0.2,23.9
+"Alho-poró, cru",100,g,32,132,1.4,0.1,6.9
+"Almeirão, cru",100,g,18,75,1.8,0.2,3.3
+"Almeirão, refogado",100,g,65,272,1.7,4.8,5.7
+"Batata, baroa, cozida",100,g,80,335,0.9,0.2,18.9
+"Batata, baroa, crua",100,g,101,423,1,0.2,24
+"Batata, doce, cozida",100,g,77,321,0.6,0.1,18.4
+"Batata, doce, crua",100,g,118,495,1.3,0.1,28.2
+"Batata, frita, tipo chips, industrializada",100,g,543,2271,5.6,36.6,51.2
+"Batata, inglesa, cozida",100,g,52,216,1.2,0,11.9
+"Batata, inglesa, crua",100,g,64,269,1.8,0,14.7
+"Batata, inglesa, frita",100,g,267,1118,5,13.1,35.6
+"Batata, inglesa, sauté",100,g,68,284,1.3,0.9,14.1
+"Berinjela, cozida",100,g,19,79,0.7,0.1,4.5
+"Berinjela, crua",100,g,20,82,1.2,0.1,4.4
+"Beterraba, cozida",100,g,32,135,1.3,0.1,7.2
+"Beterraba, crua",100,g,49,204,1.9,0.1,11.1
+"Biscoito, polvilho doce",100,g,438,1831,1.3,12.2,80.5
+"Brócolis, cozido",100,g,25,103,2.1,0.5,4.4
+"Brócolis, cru",100,g,25,107,3.6,0.3,4
+"Cará, cozido",100,g,78,325,1.5,0.1,18.9
+"Cará, cru",100,g,96,400,2.3,0.1,23
+"Caruru, cru",100,g,34,142,3.2,0.6,6
+"Catalonha, crua",100,g,24,100,1.9,0.3,4.8
+"Catalonha, refogada",100,g,63,265,2,4.8,4.8
+"Cebola, crua",100,g,39,165,1.7,0.1,8.9
+"Cebolinha, crua",100,g,20,82,1.9,0.4,3.4
+"Cenoura, cozida",100,g,30,125,0.8,0.2,6.7
+"Cenoura, crua",100,g,34,143,1.3,0.2,7.7
+"Chicória, crua",100,g,14,58,1.1,0.1,2.9
+"Chuchu, cozido",100,g,19,78,0.4,0,4.8
+"Chuchu, cru",100,g,17,71,0.7,0.1,4.1
+"Coentro, folhas desidratadas",100,g,309,1293,20.9,10.4,48
+"Couve, manteiga, crua",100,g,27,113,2.9,0.5,4.3
+"Couve, manteiga, refogada ",100,g,90,378,1.7,6.6,8.7
+"Couve-flor, crua",100,g,23,94,1.9,0.2,4.5
+"Couve-flor, cozida",100,g,19,80,1.2,0.3,3.9
+"Espinafre, Nova Zelândia, cru",100,g,16,67,2,0.2,2.6
+"Espinafre, Nova Zelândia, refogado",100,g,67,281,2.7,5.4,4.2
+"Farinha, de mandioca, crua",100,g,361,1510,1.6,0.3,87.9
+"Farinha, de mandioca, torrada",100,g,365,1528,1.2,0.3,89.2
+"Farinha, de puba",100,g,360,1507,1.6,0.5,87.3
+"Fécula, de mandioca",100,g,331,1384,0.5,0.3,81.1
+"Feijão, broto, cru",100,g,39,162,4.2,0.1,7.8
+"Inhame, cru",100,g,97,405,2.1,0.2,23.2
+"Jiló, cru",100,g,27,114,1.4,0.2,6.2
+"Jurubeba, crua",100,g,126,526,4.4,3.9,23.1
+"Mandioca, cozida",100,g,125,524,0.6,0.3,30.1
+"Mandioca, crua",100,g,151,634,1.1,0.3,36.2
+"Mandioca, farofa, temperada",100,g,406,1697,2.1,9.1,80.3
+"Mandioca, frita",100,g,300,1255,1.4,11.2,50.3
+"Manjericão, cru",100,g,21,88,2,0.4,3.6
+"Maxixe, cru",100,g,14,58,1.4,0.1,2.7
+"Mostarda, folha, crua",100,g,18,76,2.1,0.2,3.2
+"Nhoque, batata, cozido",100,g,181,756,5.9,1.9,36.8
+"Nabo, cru",100,g,18,76,1.2,0.1,4.1
+"Palmito, juçara, em conserva",100,g,23,97,1.8,0.4,4.3
+"Palmito, pupunha, em conserva",100,g,29,123,2.5,0.5,5.5
+"Pão, de queijo, assado",100,g,363,1519,5.1,24.6,34.2
+"Pão, de queijo, cru",100,g,295,1232,3.6,14,38.5
+"Pepino, cru",100,g,10,40,0.9,0,2
+"Pimentão, amarelo, cru",100,g,28,117,1.2,0.4,6
+"Pimentão, verde, cru",100,g,21,89,1.1,0.2,4.9
+"Pimentão, vermelho, cru",100,g,23,97,1,0.1,5.5
+"Polvilho, doce",100,g,351,1470,0.4,0,86.8
+"Quiabo, cru",100,g,30,125,1.9,0.3,6.4
+"Rabanete, cru",100,g,14,57,1.4,0.1,2.7
+"Repolho, branco, cru",100,g,17,72,0.9,0.1,3.9
+"Repolho, roxo, cru",100,g,31,129,1.9,0.1,7.2
+"Repolho, roxo, refogado",100,g,42,175,1.8,1.2,7.6
+"Rúcula, crua",100,g,13,55,1.8,0.1,2.2
+"Salsa, crua",100,g,33,140,3.3,0.6,5.7
+"Seleta de legumes, enlatada",100,g,57,237,3.4,0.4,12.7
+"Serralha, crua",100,g,30,127,2.7,0.7,4.9
+"Taioba, crua",100,g,34,143,2.9,0.9,5.4
+"Tomate, com semente, cru",100,g,15,64,1.1,0.2,3.1
+"Tomate, extrato",100,g,61,255,2.4,0.2,15
+"Tomate, molho industrializado",100,g,38,161,1.4,0.9,7.7
+"Tomate, purê",100,g,28,117,1.4,0,6.9
+"Tomate, salada",100,g,21,86,0.8,0,5.1
+"Vagem, crua",100,g,25,104,1.8,0.2,5.3
+"Abacate, cru",100,g,96,402,1.2,8.4,6
+"Abacaxi, cru",100,g,48,202,0.9,0.1,12.3
+"Abacaxi, polpa, congelada",100,g,31,128,0.5,0.1,7.8
+"Abiu, cru",100,g,62,261,0.8,0.7,14.9
+"Açaí, polpa, com xarope de guaraná e glucose",100,g,110,461,0.7,3.7,21.5
+"Açaí, polpa, congelada",100,g,58,243,0.8,3.9,6.2
+"Acerola, crua",100,g,33,140,0.9,0.2,8
+"Acerola, polpa, congelada",100,g,22,92,0.6,0,5.5
+"Ameixa, calda, enlatada ",100,g,183,765,0.4,0,46.9
+"Ameixa, crua",100,g,53,220,0.8,0,13.9
+"Ameixa, em calda, enlatada, drenada ",100,g,177,742,1,0.3,47.7
+"Atemóia, crua",100,g,97,406,1,0.3,25.3
+"Banana, da terra, crua",100,g,128,536,1.4,0.2,33.7
+"Banana, doce em barra",100,g,280,1172,2.2,0.1,75.7
+"Banana, figo, crua",100,g,105,440,1.1,0.1,27.8
+"Banana, maçã, crua",100,g,87,363,1.8,0.1,22.3
+"Banana, nanica, crua",100,g,92,383,1.4,0.1,23.8
+"Banana, ouro, crua",100,g,112,470,1.5,0.2,29.3
+"Banana, pacova, crua",100,g,78,326,1.2,0.1,20.3
+"Banana, prata, crua",100,g,98,411,1.3,0.1,26
+"Cacau, cru",100,g,74,311,1,0.1,19.4
+"Cajá-Manga, cru",100,g,46,191,1.3,0,11.4
+"Cajá, polpa, congelada",100,g,26,110,0.6,0.2,6.4
+"Caju, cru",100,g,43,180,1,0.3,10.3
+"Caju, polpa, congelada",100,g,37,153,0.5,0.2,9.4
+"Caju, suco concentrado, envasado",100,g,45,189,0.4,0.2,10.7
+"Caqui, chocolate, cru",100,g,71,299,0.4,0.1,19.3
+"Carambola, crua",100,g,46,191,0.9,0.2,11.5
+"Ciriguela, crua",100,g,76,316,1.4,0.4,18.9
+"Cupuaçu, cru",100,g,49,207,1.2,1,10.4
+"Cupuaçu, polpa, congelada",100,g,49,204,0.8,0.6,11.4
+"Figo, cru",100,g,41,173,1,0.2,10.2
+"Figo, enlatado, em calda",100,g,184,771,0.6,0.2,50.3
+"Fruta-pão, crua",100,g,67,281,1.1,0.2,17.2
+"Goiaba, branca, com casca, crua",100,g,52,216,0.9,0.5,12.4
+"Goiaba, doce em pasta",100,g,269,1125,0.6,0,74.1
+"Goiaba, doce, cascão",100,g,286,1195,0.4,0.1,78.7
+"Goiaba, vermelha, com casca, crua",100,g,54,227,1.1,0.4,13
+"Graviola, crua",100,g,62,258,0.8,0.2,15.8
+"Graviola, polpa, congelada",100,g,38,160,0.6,0.1,9.8
+"Jabuticaba, crua",100,g,58,243,0.6,0.1,15.3
+"Jaca, crua",100,g,88,368,1.4,0.3,22.5
+"Jambo, cru",100,g,27,113,0.9,0.1,6.5
+"Jamelão, cru",100,g,41,172,0.5,0.1,10.6
+"Kiwi, cru",100,g,51,214,1.3,0.6,11.5
+"Laranja, baía, crua",100,g,45,190,1,0.1,11.5
+"Laranja, baía, suco",100,g,37,153,0.7,0,8.7
+"Laranja, da terra, crua",100,g,51,215,1.1,0.2,12.9
+"Laranja, da terra, suco",100,g,41,171,0.7,0.1,9.6
+"Laranja, lima, crua",100,g,46,191,1.1,0.1,11.5
+"Laranja, lima, suco",100,g,39,165,0.7,0.1,9.2
+"Laranja, pêra, crua",100,g,37,154,1,0.1,8.9
+"Laranja, pêra, suco",100,g,33,137,0.7,0.1,7.6
+"Laranja, valência, crua",100,g,46,193,0.8,0.2,11.7
+"Laranja, valência, suco",100,g,36,151,0.5,0.1,8.6
+"Limão, cravo, suco",100,g,14,59,0.3,0,5.2
+"Limão, galego, suco",100,g,22,93,0.6,0.1,7.3
+"Limão, tahiti, cru",100,g,32,133,0.9,0.1,11.1
+"Maçã, Argentina, com casca, crua",100,g,63,262,0.2,0.2,16.6
+"Maçã, Fuji, com casca, crua",100,g,56,232,0.3,0,15.2
+"Macaúba, crua",100,g,404,1692,2.1,40.7,13.9
+" Mamão, doce em calda, drenado",100,g,196,819,0.2,0.1,54
+"Mamão, Formosa, cru",100,g,45,190,0.8,0.1,11.6
+"Mamão, Papaia, cru",100,g,40,168,0.5,0.1,10.4
+" Mamão verde, doce em calda, drenado",100,g,209,876,0.3,0.1,57.6
+"Manga, Haden, crua",100,g,64,266,0.4,0.3,16.7
+"Manga, Palmer, crua",100,g,72,303,0.4,0.2,19.4
+"Manga, polpa, congelada",100,g,48,202,0.4,0.2,12.5
+"Manga, Tommy Atkins, crua",100,g,51,212,0.9,0.2,12.8
+"Maracujá, cru",100,g,68,286,2,2.1,12.3
+"Maracujá, polpa, congelada",100,g,39,162,0.8,0.2,9.6
+"Maracujá, suco concentrado, envasado",100,g,42,176,0.8,0.2,9.6
+"Melancia, crua",100,g,33,136,0.9,0,8.1
+"Melão, cru",100,g,29,123,0.7,0,7.5
+"Mexerica, Murcote, crua",100,g,58,241,0.9,0.1,14.9
+"Mexerica, Rio, crua",100,g,37,154,0.7,0.1,9.3
+"Morango, cru",100,g,30,126,0.9,0.3,6.8
+"Nêspera, crua",100,g,43,178,0.3,0,11.5
+"Pequi, cru",100,g,205,858,2.3,18,13
+"Pêra, Park, crua",100,g,61,254,0.2,0.2,16.1
+"Pêra, Williams, crua",100,g,53,223,0.6,0.1,14
+"Pêssego, Aurora, cru",100,g,36,152,0.8,0,9.3
+"Pêssego, enlatado, em calda",100,g,63,264,0.7,0,16.9
+"Pinha, crua",100,g,88,370,1.5,0.3,22.4
+"Pitanga, crua",100,g,41,173,0.9,0.2,10.2
+"Pitanga, polpa, congelada",100,g,19,80,0.3,0.1,4.8
+"Romã, crua",100,g,56,233,0.4,0,15.1
+"Tamarindo, cru",100,g,276,1154,3.2,0.5,72.5
+"Tangerina, Poncã, crua",100,g,38,158,0.8,0.1,9.6
+"Tangerina, Poncã, suco",100,g,36,151,0.5,0,8.8
+"Tucumã, cru",100,g,262,1096,2.1,19.1,26.5
+"Umbu, cru",100,g,37,155,0.8,0,9.4
+"Umbu, polpa, congelada",100,g,34,142,0.5,0.1,8.8
+"Uva, Itália, crua",100,g,53,221,0.7,0.2,13.6
+"Uva, Rubi, crua",100,g,49,205,0.6,0.2,12.7
+"Uva, suco concentrado, envasado",100,g,58,241,0,0,14.7
+"Azeite, de dendê",100,g,884,3699,0,100,0
+"Azeite, de oliva, extra virgem",100,g,884,3699,0,100,0
+"Manteiga, com sal",100,g,726,3037,0.4,82.4,0.1
+"Manteiga, sem sal",100,g,758,3170,0.4,86,0
+"Margarina, com óleo hidrogenado, com sal (65% de lipídeos)",100,g,596,2494,0,67.4,0
+"Margarina, com óleo hidrogenado, sem sal (80% de lipídeos)",100,g,723,3023,0,81.7,0
+"Margarina, com óleo interesterificado, com sal (65%de lipídeos)",100,g,594,2487,0,67.2,0
+"Margarina, com óleo interesterificado, sem sal (65% de lipídeos)",100,g,593,2482,0,67.1,0
+"Óleo, de babaçu",100,g,884,3699,0,100,0
+"Óleo, de canola",100,g,884,3699,0,100,0
+"Óleo, de girassol",100,g,884,3699,0,100,0
+"Óleo, de milho",100,g,884,3699,0,100,0
+"Óleo, de pequi",100,g,884,3699,0,100,0
+"Óleo, de soja",100,g,884,3699,0,100,0
+"Abadejo, filé, congelado, assado",100,g,112,467,23.5,1.2,0
+"Abadejo, filé, congelado,cozido",100,g,91,381,19.3,0.9,0
+"Abadejo, filé, congelado, cru",100,g,59,247,13.1,0.4,0
+"Abadejo, filé, congelado, grelhado",100,g,130,542,27.6,1.3,0
+"Atum, conserva em óleo",100,g,166,694,26.2,6,0
+"Atum, fresco, cru",100,g,118,492,25.7,0.9,0
+"Bacalhau, salgado, cru",100,g,136,569,29,1.3,0
+"Bacalhau, salgado, refogado",100,g,140,584,24,3.6,1.2
+"Cação, posta, com farinha de trigo, frita",100,g,208,872,25,10,3.1
+"Cação, posta, cozida",100,g,116,485,25.6,0.7,0
+"Cação, posta, crua",100,g,83,349,17.9,0.8,0
+"Camarão, Rio Grande, grande, cozido",100,g,90,377,19,1,0
+"Camarão, Rio Grande, grande, cru",100,g,47,197,10,0.5,0
+"Camarão, Sete Barbas, sem cabeça, com casca, frito",100,g,231,968,18.4,15.6,2.9
+"Caranguejo, cozido",100,g,83,346,18.5,0.4,0
+"Corimba, cru",100,g,128,536,17.4,6,0
+"Corimbatá, assado",100,g,261,1094,19.9,19.6,0
+"Corimbatá, cozido",100,g,239,999,20.1,16.9,0
+"Corvina de água doce, crua",100,g,101,423,18.9,2.2,0
+"Corvina do mar, crua",100,g,94,392,18.6,1.6,0
+"Corvina grande, assada",100,g,147,613,26.8,3.6,0
+"Corvina grande, cozida",100,g,100,419,23.4,2.6,0
+"Dourada de água doce, fresca",100,g,131,549,18.8,5.6,0
+"Lambari, congelado, cru",100,g,131,547,16.8,6.5,0
+"Lambari, congelado, frito",100,g,327,1368,28.4,22.8,0
+"Lambari, fresco, cru",100,g,152,634,15.7,9.4,0
+"Manjuba, com farinha de trigo, frita",100,g,344,1437,23.5,22.6,10.2
+"Manjuba, frita",100,g,349,1462,30.1,24.5,0
+"Merluza, filé, assado",100,g,122,510,26.6,0.9,0
+"Merluza, filé, cru",100,g,89,373,16.6,2,0
+"Merluza, filé, frito",100,g,192,802,26.9,8.5,0
+"Pescada, branca, crua",100,g,111,464,16.3,4.6,0
+"Pescada, branca, frita",100,g,223,933,27.4,11.8,0
+"Pescada, filé, com farinha de trigo, frito",100,g,283,1186,21.4,19.1,5
+"Pescada, filé, cru",100,g,107,449,16.7,4,0
+"Pescada, filé, frito",100,g,154,645,28.6,3.6,0
+"Pescada, filé, molho escabeche",100,g,142,594,11.8,8,5
+"Pescadinha, crua",100,g,76,320,15.5,1.1,0
+"Pintado, assado",100,g,192,801,36.5,4,0
+"Pintado, cru",100,g,91,381,18.6,1.3,0
+"Pintado, grelhado",100,g,152,637,30.8,2.3,0
+"Porquinho, cru",100,g,93,389,20.5,0.6,0
+"Salmão, filé, com pele, fresco,  grelhado",100,g,229,957,23.9,14,0
+"Salmão, sem pele, fresco, cru",100,g,170,710,19.3,9.7,0
+"Salmão, sem pele, fresco, grelhado",100,g,243,1015,26.1,14.5,0
+"Sardinha, assada",100,g,164,688,32.2,3,0
+"Sardinha, conserva em óleo",100,g,285,1192,15.9,24,0
+"Sardinha, frita",100,g,257,1075,33.4,12.7,0
+"Sardinha, inteira, crua",100,g,114,477,21.1,2.7,0
+"Tucunaré, filé, congelado, cru",100,g,88,367,18,1.2,0
+Apresuntado,100,g,129,539,13.5,6.7,2.9
+"Caldo de carne, tablete",100,g,241,1007,7.8,16.6,15.1
+"Caldo de galinha, tablete",100,g,251,1052,6.3,20.4,10.6
+"Carne, bovina, acém, moído, cozido",100,g,212,889,26.7,10.9,0
+"Carne, bovina, acém, moído, cru",100,g,137,571,19.4,5.9,0
+"Carne, bovina, acém, sem gordura, cozido",100,g,215,898,27.3,10.9,0
+"Carne, bovina, acém, sem gordura, cru",100,g,144,603,20.8,6.1,0
+"Carne, bovina, almôndegas, cruas",100,g,189,792,12.3,11.2,9.8
+"Carne, bovina, almôndegas, fritas",100,g,272,1137,18.2,15.8,14.3
+"Carne, bovina, bucho, cozido",100,g,133,557,21.6,4.5,0
+"Carne, bovina, bucho, cru",100,g,137,574,20.5,5.5,0
+"Carne, bovina, capa de contra-filé, com gordura, crua",100,g,217,908,19.2,15,0
+"Carne, bovina, capa de contra-filé, com gordura, grelhada",100,g,312,1304,30.7,20,0
+"Carne, bovina, capa de contra-filé, sem gordura, crua",100,g,131,548,21.5,4.3,0
+"Carne, bovina, capa de contra-filé, sem gordura, grelhada",100,g,239,1002,35.1,10,0
+"Carne, bovina, charque, cozido",100,g,263,1099,36.4,11.9,0
+"Carne, bovina, charque, cru",100,g,249,1041,22.7,16.8,0
+"Carne, bovina, contra-filé, à milanesa",100,g,352,1471,20.6,24,12.2
+"Carne, bovina, contra-filé de costela, cru",100,g,202,847,19.8,13.1,0
+"Carne, bovina, contra-filé de costela, grelhado",100,g,275,1150,29.9,16.3,0
+"Carne, bovina, contra-filé, com gordura, cru",100,g,206,861,21.2,12.8,0
+"Carne, bovina, contra-filé, com gordura, grelhado",100,g,278,1163,32.4,15.5,0
+"Carne, bovina, contra-filé, sem gordura, cru",100,g,157,655,24,6,0
+"Carne, bovina, contra-filé, sem gordura, grelhado",100,g,194,810,35.9,4.5,0
+"Carne, bovina, costela, assada",100,g,373,1561,28.8,27.7,0
+"Carne, bovina, costela, crua",100,g,358,1497,16.7,31.8,0
+"Carne, bovina, coxão duro, sem gordura, cozido",100,g,217,906,31.9,8.9,0
+"Carne, bovina, coxão duro, sem gordura, cru",100,g,148,619,21.5,6.2,0
+"Carne, bovina, coxão mole, sem gordura, cozido",100,g,219,915,32.4,8.9,0
+"Carne, bovina, coxão mole, sem gordura, cru",100,g,169,707,21.2,8.7,0
+"Carne, bovina, cupim, assado",100,g,330,1381,28.6,23,0
+"Carne, bovina, cupim, cru",100,g,221,926,19.5,15.3,0
+"Carne, bovina, fígado, cru",100,g,141,590,20.7,5.4,1.1
+"Carne, bovina, fígado, grelhado",100,g,225,942,29.9,9,4.2
+"Carne, bovina, filé mingnon, sem gordura, cru",100,g,143,598,21.6,5.6,0
+"Carne, bovina, filé mingnon, sem gordura, grelhado",100,g,220,919,32.8,8.8,0
+"Carne, bovina, flanco, sem gordura, cozido",100,g,196,818,29.4,7.8,0
+"Carne, bovina, flanco, sem gordura, cru",100,g,141,592,20,6.2,0
+"Carne, bovina, fraldinha, com gordura, cozida",100,g,338,1416,24.2,26,0
+"Carne, bovina, fraldinha, com gordura, crua",100,g,221,924,17.6,16.1,0
+"Carne, bovina, lagarto, cozido",100,g,222,931,32.9,9.1,0
+"Carne, bovina, lagarto, cru",100,g,135,564,20.5,5.2,0
+"Carne, bovina, língua, cozida",100,g,315,1318,21.4,24.8,0
+"Carne, bovina, língua, crua",100,g,215,901,17.1,15.8,0
+"Carne, bovina, maminha, crua",100,g,153,639,20.9,7,0
+"Carne, bovina, maminha, grelhada",100,g,153,641,30.7,2.4,0
+"Carne, bovina, miolo de alcatra, sem gordura, cru",100,g,163,681,21.6,7.8,0
+"Carne, bovina, miolo de alcatra, sem gordura, grelhado",100,g,241,1010,31.9,11.6,0
+"Carne, bovina, músculo, sem gordura, cozido",100,g,194,811,31.2,6.7,0
+"Carne, bovina, músculo, sem gordura, cru",100,g,142,592,21.6,5.5,0
+"Carne, bovina, paleta, com gordura, crua",100,g,159,664,21.4,7.5,0
+"Carne, bovina, paleta, sem gordura, cozida",100,g,194,810,29.7,7.4,0
+"Carne, bovina, paleta, sem gordura, crua",100,g,141,590,21,5.7,0
+"Carne, bovina, patinho, sem gordura, cru",100,g,133,558,21.7,4.5,0
+"Carne, bovina, patinho, sem gordura, grelhado",100,g,219,917,35.9,7.3,0
+"Carne, bovina, peito, sem gordura, cozido",100,g,338,1416,22.2,27,0
+"Carne, bovina, peito, sem gordura, cru",100,g,259,1085,17.6,20.4,0
+"Carne, bovina, picanha, com gordura, crua",100,g,213,891,18.8,14.7,0
+"Carne, bovina, picanha, com gordura, grelhada",100,g,289,1208,26.4,19.5,0
+"Carne, bovina, picanha, sem gordura, crua",100,g,134,559,21.3,4.7,0
+"Carne, bovina, picanha, sem gordura, grelhada",100,g,238,998,31.9,11.3,0
+"Carne, bovina, seca, cozida",100,g,313,1309,26.9,21.9,0
+"Carne, bovina, seca, crua",100,g,313,1309,19.7,25.4,0
+"Coxinha de frango, frita",100,g,283,1184,9.6,11.8,34.5
+"Croquete, de carne, cru",100,g,246,1028,12,15.6,13.9
+"Croquete, de carne, frito",100,g,347,1451,16.9,22.7,18.1
+"Empada de frango, pré-cozida, assada",100,g,358,1499,6.9,15.6,47.5
+"Empada, de frango, pré-cozida",100,g,377,1579,7.3,22.9,35.5
+"Frango, asa, com pele, crua",100,g,213,892,18.1,15.1,0
+"Frango, caipira, inteiro, com pele, cozido",100,g,243,1016,23.9,15.6,0
+"Frango, caipira, inteiro, sem pele, cozido",100,g,196,819,29.6,7.7,0
+"Frango, coração, cru",100,g,222,927,12.6,18.6,0
+"Frango, coração, grelhado",100,g,207,867,22.4,12.1,0.6
+"Frango, coxa, com pele, assada",100,g,215,900,28.5,10.4,0.1
+"Frango, coxa, com pele, crua",100,g,161,676,17.1,9.8,0
+"Frango, coxa, sem pele, cozida",100,g,167,701,26.9,5.8,0
+"Frango, coxa, sem pele, crua",100,g,120,502,17.8,4.9,0
+"Frango, fígado, cru",100,g,106,446,17.6,3.5,0
+"Frango, filé, à milanesa",100,g,221,924,28.5,7.8,7.5
+"Frango, inteiro, com pele, cru",100,g,226,947,16.4,17.3,0
+"Frango, inteiro, sem pele, assado",100,g,187,784,28,7.5,0
+"Frango, inteiro, sem pele, cozido",100,g,170,713,25,7.1,0
+"Frango, inteiro, sem pele, cru",100,g,129,540,20.6,4.6,0
+"Frango, peito, com pele, assado",100,g,212,886,33.4,7.6,0
+"Frango, peito, com pele, cru",100,g,149,625,20.8,6.7,0
+"Frango, peito, sem pele, cozido",100,g,163,681,31.5,3.2,0
+"Frango, peito, sem pele, cru",100,g,119,499,21.5,3,0
+"Frango, peito, sem pele, grelhado",100,g,159,666,32,2.5,0
+"Frango, sobrecoxa, com pele, assada",100,g,260,1086,28.7,15.2,0
+"Frango, sobrecoxa, com pele, crua",100,g,255,1065,15.5,20.9,0
+"Frango, sobrecoxa, sem pele, assada",100,g,233,974,29.2,12,0
+"Frango, sobrecoxa, sem pele, crua",100,g,162,677,17.6,9.6,0
+"Hambúrguer, bovino, cru",100,g,215,899,13.2,16.2,4.2
+"Hambúrguer, bovino, frito",100,g,258,1081,20,17,6.3
+"Hambúrguer, bovino, grelhado",100,g,210,878,13.2,12.4,11.3
+"Lingüiça, frango, crua",100,g,218,913,14.2,17.4,0
+"Lingüiça, frango, frita",100,g,245,1027,18.3,18.5,0
+"Lingüiça, frango, grelhada",100,g,244,1019,18.2,18.4,0
+"Lingüiça, porco, crua",100,g,227,951,16.1,17.6,0
+"Lingüiça, porco, frita",100,g,280,1170,20.5,21.3,0
+"Lingüiça, porco, grelhada",100,g,296,1241,23.2,21.9,0
+Mortadela,100,g,269,1125,12,21.6,5.8
+"Peru, congelado, assado",100,g,163,682,26.2,5.7,0
+"Peru, congelado, cru",100,g,94,392,18.1,1.8,0
+"Porco, bisteca, crua",100,g,164,687,21.5,8,0
+"Porco, bisteca, frita",100,g,311,1302,33.7,18.5,0
+"Porco, bisteca, grelhada",100,g,280,1172,28.9,17.4,0
+"Porco, costela, assada",100,g,402,1683,30.2,30.3,0
+"Porco, costela, crua",100,g,256,1069,18,19.8,0
+"Porco, lombo, assado",100,g,210,880,35.7,6.4,0
+"Porco, lombo, cru",100,g,176,735,22.6,8.8,0
+"Porco, orelha, salgada, crua",100,g,258,1082,18.5,19.9,0
+"Porco, pernil, assado",100,g,262,1097,32.1,13.9,0
+"Porco, pernil, cru",100,g,186,778,20.1,11.1,0
+"Porco, rabo, salgado, cru",100,g,377,1579,15.6,34.5,0
+"Presunto, com capa de gordura",100,g,128,535,14.4,6.8,1.4
+"Presunto, sem capa de gordura",100,g,94,392,14.3,2.7,2.1
+"Quibe, assado",100,g,136,570,14.6,2.7,12.9
+"Quibe, cru",100,g,109,458,12.4,1.7,10.8
+"Quibe, frito",100,g,254,1062,14.9,15.8,12.3
+Salame,100,g,398,1665,25.8,30.6,2.9
+"Toucinho, cru",100,g,593,2479,11.5,60.3,0
+"Toucinho, frito",100,g,697,2914,27.3,64.3,0
+"Bebida láctea, pêssego",100,g,55,231,2.1,1.9,7.6
+Creme de Leite,100,g,221,927,1.5,22.5,4.5
+"Iogurte, natural",100,g,51,215,4.1,3,1.9
+"Iogurte, natural, desnatado",100,g,41,174,3.8,0.3,5.8
+"Iogurte, sabor morango",100,g,70,291,2.7,2.3,9.7
+"Iogurte, sabor pêssego",100,g,68,284,2.5,2.3,9.4
+"Leite, condensado",100,g,313,1308,7.7,6.7,57
+"Leite, de cabra",100,g,66,278,3.1,3.8,5.2
+"Leite, de vaca, achocolatado",100,g,83,347,2.1,2.2,14.2
+"Leite, de vaca, desnatado, pó",100,g,362,1513,34.7,0.9,53
+"Leite, de vaca, integral, pó",100,g,497,2078,25.4,26.9,39.2
+"Leite, fermentado",100,g,70,291,1.9,0.1,15.7
+"Queijo, minas, frescal",100,g,264,1106,17.4,20.2,3.2
+"Queijo, minas, meia cura",100,g,321,1342,21.2,24.6,3.6
+"Queijo, mozarela",100,g,330,1380,22.6,25.2,3
+"Queijo, parmesão",100,g,453,1895,35.6,33.5,1.7
+"Queijo, pasteurizado",100,g,303,1268,9.4,27.4,5.7
+"Queijo, petit suisse, morango",100,g,121,507,5.8,2.8,18.5
+"Queijo, prato",100,g,360,1506,22.7,29.1,1.9
+"Queijo, requeijão, cremoso",100,g,257,1074,9.6,23.4,2.4
+"Queijo, ricota",100,g,140,585,12.6,8.1,3.8
+"Bebida isotônica, sabores variados",100,g,26,107,0,0,6.4
+"Café, infusão 10%",100,g,9,38,0.7,0.1,1.5
+"Cana, caldo de",100,g,65,273,0,0,18.2
+"Cerveja, pilsen 2",100,g,41,170,0.6,0,3.3
+"Chá, erva-doce, infusão 5%",100,g,1,6,0,0,0.4
+"Chá, mate, infusão 5%",100,g,3,11,0,0.1,0.6
+"Chá, preto, infusão 5%",100,g,2,9,0,0,0.6
+"Coco, água de",100,g,22,90,0,0,5.3
+"Refrigerante, tipo água tônica",100,g,31,129,0,0,8
+"Refrigerante, tipo cola",100,g,34,140,0,0,8.7
+"Refrigerante, tipo guaraná",100,g,39,162,0,0,10
+"Refrigerante, tipo laranja",100,g,46,191,0,0,11.8
+"Refrigerante, tipo limão",100,g,40,166,0,0,10.3
+"Omelete, de queijo",100,g,268,1121,15.6,22,0.4
+"Ovo, de codorna, inteiro, cru",100,g,177,740,13.7,12.7,0.8
+"Ovo, de galinha, clara, cozida/10minutos",100,g,59,249,13.4,0.1,0
+"Ovo, de galinha, gema, cozida/10minutos",100,g,353,1476,15.9,30.8,1.6
+"Ovo, de galinha, inteiro, cozido/10minutos",100,g,146,610,13.3,9.5,0.6
+"Ovo, de galinha, inteiro, cru",100,g,143,599,13,8.9,1.6
+"Ovo, de galinha, inteiro, frito",100,g,240,1005,15.6,18.6,1.2
+"Achocolatado, pó",100,g,401,1678,4.2,2.2,91.2
+"Açúcar, cristal",100,g,387,1619,0.3,0,99.6
+"Açúcar, mascavo",100,g,369,1542,0.8,0.1,94.5
+"Açúcar, refinado",100,g,387,1617,0.3,0,99.5
+"Chocolate, ao leite",100,g,540,2258,7.2,30.3,59.6
+"Chocolate, ao leite, com castanha do Pará",100,g,559,2338,7.4,34.2,55.4
+"Chocolate, ao leite, dietético",100,g,557,2330,6.9,33.8,56.3
+"Chocolate, meio amargo",100,g,475,1987,4.9,29.9,62.4
+Cocada branca,100,g,449,1878,1.1,13.6,81.4
+"Doce, de abóbora, cremoso",100,g,199,832,0.9,0.2,54.6
+"Doce, de leite, cremoso",100,g,306,1282,5.5,6,59.5
+"Geléia, mocotó, natural",100,g,106,444,2.1,0.1,24.2
+Glicose de milho,100,g,292,1222,0,0,79.4
+Maria mole,100,g,301,1260,3.8,0.2,73.6
+"Maria mole, coco queimado",100,g,307,1283,3.9,0.1,75.1
+Marmelada,100,g,257,1076,0.4,0.1,70.8
+"Mel, de abelha",100,g,309,1294,0,0,84
+Melado,100,g,297,1241,0,0,76.6
+Quindim,100,g,411,1721,4.7,24.4,46.3
+Rapadura,100,g,352,1473,1,0.1,90.8
+"Café, pó, torrado",100,g,419,1752,14.7,11.9,65.8
+"Capuccino, pó",100,g,417,1746,11.3,8.6,73.6
+"Fermento em pó, químico",100,g,90,375,0.5,0.1,43.9
+"Fermento, biológico, levedura, tablete",100,g,90,376,17,1.5,7.7
+"Gelatina, sabores variados, pó",100,g,380,1591,8.9,0,89.2
+"Sal, dietético",100,g,0,0,0,0,0
+"Sal, grosso",100,g,0,0,0,0,0
+Shoyu,100,g,61,255,3.3,0.3,11.6
+Tempero a base de sal,100,g,21,89,2.7,0.3,2.1
+"Azeitona, preta, conserva",100,g,194,812,1.2,20.3,5.5
+"Azeitona, verde, conserva",100,g,137,573,0.9,14.2,4.1
+"Chantilly, spray, com gordura vegetal",100,g,315,1318,0.5,27.3,16.9
+"Leite, de coco",100,g,166,695,1,18.4,2.2
+"Maionese, tradicional com ovos",100,g,302,1264,0.6,30.5,7.9
+Acarajé,100,g,289,1210,8.3,19.9,19.1
+Arroz carreteiro,100,g,154,643,10.8,7.1,11.6
+"Baião de dois, arroz e feijão-de-corda",100,g,136,568,6.2,3.2,20.4
+Barreado,100,g,165,690,18.3,9.5,0.2
+"Bife à cavalo, com contra filé",100,g,291,1219,23.7,21.1,0
+Bolinho de arroz,100,g,274,1144,8,8.3,41.7
+Camarão à baiana,100,g,101,422,7.9,6,3.2
+"Charuto, de repolho",100,g,78,327,6.8,1.1,10.1
+"Cuscuz, de milho, cozido com sal",100,g,113,475,2.2,0.7,25.3
+"Cuscuz, paulista",100,g,142,595,2.6,4.6,22.5
+"Cuxá, molho",100,g,80,335,5.6,3.6,5.7
+Dobradinha,100,g,125,521,19.8,4.4,0
+Estrogonofe de carne,100,g,173,724,15,10.8,3
+Estrogonofe de frango,100,g,157,656,17.6,8,2.6
+Feijão tropeiro mineiro,100,g,152,634,10.2,6.8,19.6
+Feijoada,100,g,117,489,8.7,6.5,11.6
+"Frango, com açafrão",100,g,113,472,9.7,6.2,4.1
+"Macarrão, molho bolognesa",100,g,120,500,4.9,0.9,22.5
+Maniçoba,100,g,134,562,10,8.7,3.4
+Quibebe,100,g,86,361,8.6,2.7,6.6
+"Salada, de legumes, com maionese",100,g,96,402,1.1,7,8.9
+"Salada, de legumes, cozida no vapor",100,g,35,148,2,0.3,7.1
+"Salpicão, de frango",100,g,148,619,13.9,7.8,4.6
+Sarapatel,100,g,123,515,18.5,4.4,1.1
+Tabule,100,g,57,240,2,1.2,10.6
+Tacacá,100,g,47,196,7,0.4,3.4
+"Tapioca, com manteiga",100,g,348,1455,0.1,10.9,63.6
+"Tucupi, com pimenta-de-cheiro",100,g,27,114,2.1,0.3,4.7
+Vaca atolada,100,g,145,606,5.1,9.3,10.1
+Vatapá,100,g,255,1066,6,23.2,9.7
+Virado à paulista,100,g,307,1284,10.2,25.6,14.1
+Yakisoba,100,g,113,472,7.5,2.6,18.3
+"Amendoim, grão, cru",100,g,544,2276,27.2,43.9,20.3
+"Amendoim, torrado, salgado",100,g,606,2535,22.5,54,18.7
+"Ervilha, em vagem",100,g,88,367,7.5,0.5,14.2
+"Ervilha, enlatada, drenada",100,g,74,309,4.6,0.4,13.4
+"Feijão, carioca, cozido",100,g,76,320,4.8,0.5,13.6
+"Feijão, carioca, cru",100,g,329,1377,20,1.3,61.2
+"Feijão, fradinho, cozido",100,g,78,326,5.1,0.6,13.5
+"Feijão, fradinho, cru",100,g,339,1419,20.2,2.4,61.2
+"Feijão, jalo, cozido",100,g,93,388,6.1,0.5,16.5
+"Feijão, jalo, cru",100,g,328,1372,20.1,0.9,61.5
+"Feijão, preto, cozido",100,g,77,322,4.5,0.5,14
+"Feijão, preto, cru",100,g,324,1354,21.3,1.2,58.8
+"Feijão, rajado, cozido",100,g,85,354,5.5,0.4,15.3
+"Feijão, rajado, cru",100,g,326,1363,17.3,1.2,62.9
+"Feijão, rosinha, cozido",100,g,68,284,4.5,0.5,11.8
+"Feijão, rosinha, cru",100,g,337,1410,20.9,1.3,62.2
+"Feijão, roxo, cozido",100,g,77,322,5.7,0.5,12.9
+"Feijão, roxo, cru",100,g,331,1387,22.2,1.2,60
+"Grão-de-bico, cru",100,g,355,1484,21.2,5.4,57.9
+"Guandu, cru",100,g,344,1440,19,2.1,64
+"Lentilha, cozida",100,g,93,388,6.3,0.5,16.3
+"Lentilha, crua",100,g,339,1419,23.2,0.8,62
+"Paçoca, amendoim",100,g,487,2037,16,26.1,52.4
+"Pé-de-moleque, amendoim",100,g,503,2105,13.2,28,54.7
+"Soja, farinha",100,g,404,1690,36,14.6,38.4
+"Soja, extrato solúvel, natural, fluido",100,g,39,164,2.4,1.6,4.3
+"Soja, extrato solúvel, pó",100,g,459,1920,35.7,26.2,28.5
+"Soja, queijo (tofu)",100,g,64,270,6.6,4,2.1
+"Tremoço, cru",100,g,381,1595,33.6,10.3,43.8
+"Tremoço, em conserva",100,g,121,505,11.1,3.8,12.4
+"Amêndoa, torrada, salgada",100,g,581,2430,18.6,47.3,29.5
+"Castanha-de-caju, torrada, salgada",100,g,570,2386,18.5,46.3,29.1
+"Castanha-do-Brasil, crua",100,g,643,2690,14.5,63.5,15.1
+"Coco, cru",100,g,406,1701,3.7,42,10.4
+"Farinha, de mesocarpo de babaçu, crua",100,g,329,1376,1.4,0.2,79.2
+"Gergelim, semente",100,g,584,2442,21.2,50.4,21.6
+"Linhaça, semente",100,g,495,2072,14.1,32.3,43.3
+"Pinhão, cozido",100,g,174,730,3,0.7,43.9
+"Pupunha, cozida",100,g,219,914,2.5,12.8,29.6
+"Noz, crua",100,g,620,2594,14,59.4,18.4

@@ -1,4 +1,7 @@
 import express from 'express';
+import 'reflect-metadata';
+
+require('dotenv');
 
 const app = express();
 
