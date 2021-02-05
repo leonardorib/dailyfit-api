@@ -64,7 +64,7 @@ export class createFoodsTable1612459396710 implements MigrationInterface {
             default: 'now()',
           },
         ],
-      }),
+      })
     );
   }
 
