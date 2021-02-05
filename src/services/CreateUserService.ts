@@ -1,5 +1,6 @@
-import User from '../entities/User';
+import User from '../models/User';
 import IUsersRepository from '../database/repositories/base/IUsersRepository';
+import IHashProvider from '../providers/base/IHashProvider';
 
 interface IRequest {
   firstName: string;
@@ -10,9 +11,11 @@ interface IRequest {
 
 export default class CreateUserService {
   private usersRepository: IUsersRepository;
+  private hashProvider: IHashProvider;
 
-  constructor(usersRepository: IUsersRepository) {
+  constructor(usersRepository: IUsersRepository, hashProvider: IHashProvider) {
     this.usersRepository = usersRepository;
+    this.hashProvider = hashProvider;
   }
 
   public async execute({
@@ -21,11 +24,13 @@ export default class CreateUserService {
     email,
     password,
   }: IRequest): Promise<User> {
+    const passwordHash = await this.hashProvider.createHash(password);
+
     const user = await this.usersRepository.create({
       first_name: firstName,
       last_name: lastName,
       email: email,
-      password_hash: password,
+      password_hash: passwordHash,
     });
 
     return user;
