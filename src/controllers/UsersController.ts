@@ -17,13 +17,17 @@ export default class UsersController {
       bcryptHashProvider
     );
 
-    const user = await createUser.execute({
-      firstName,
-      lastName,
-      email,
-      password,
-    });
+    try {
+      const user = await createUser.execute({
+        firstName,
+        lastName,
+        email,
+        password,
+      });
 
-    return response.json(classToClass(user));
+      return response.json(classToClass(user));
+    } catch (error) {
+      return response.status(400).json({ error: error.message });
+    }
   }
 }

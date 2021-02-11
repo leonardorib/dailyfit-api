@@ -24,6 +24,13 @@ export default class CreateUserService {
     email,
     password,
   }: IRequest): Promise<User> {
+    // Unique email validation
+    const userExists = await this.usersRepository.findOneByEmail(email);
+
+    if (userExists) {
+      throw new Error('Email already in use');
+    }
+
     const passwordHash = await this.hashProvider.createHash(password);
 
     const user = await this.usersRepository.create({
