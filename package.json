@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@types/jsonwebtoken": "^8.5.0",
     "bcryptjs": "^2.4.3",
     "celebrate": "^13.0.4",
     "class-transformer": "^0.3.2",
