@@ -2,6 +2,8 @@ import { Router } from 'express';
 import UsersController from '../controllers/UsersController';
 import { celebrate, Joi, Segments } from 'celebrate';
 
+import authMiddleware from '../middlewares/authMiddleware';
+
 const usersRouter = Router();
 const usersController = new UsersController();
 

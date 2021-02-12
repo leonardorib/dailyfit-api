@@ -1,5 +1,5 @@
 import User from '../models/User';
-import jwt, { verify } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import authConfig from '../config/auth';
 import IUsersRepository from '../database/repositories/base/IUsersRepository';
 import IHashProvider from '../providers/base/IHashProvider';
