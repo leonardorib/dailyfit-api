@@ -28,8 +28,6 @@ export default function authMiddleware(
 
     request.userId = (decodedToken as IDecodedToken).user.id;
 
-    console.log(request.userId);
-
     return next();
   } catch (error) {
     throw new AppError('Invalid JWT token', 401);
