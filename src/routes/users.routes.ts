@@ -7,8 +7,6 @@ import authMiddleware from '../middlewares/authMiddleware';
 const usersRouter = Router();
 const usersController = new UsersController();
 
-usersRouter.get('/', (request, response) => response.json({ message: 'test' }));
-
 // User creation - Sign Up
 usersRouter.post(
   '/',
