@@ -45,4 +45,21 @@ usersRouter.put(
   usersController.update
 );
 
+// Account delete
+usersRouter.delete(
+  '/:user_id',
+  celebrate({
+    [Segments.BODY]: Joi.object()
+      .keys({
+        password: Joi.string().required(),
+      })
+      .with('newPassword', ['newPasswordConfirmation']),
+
+    [Segments.PARAMS]: Joi.object().keys({
+      user_id: Joi.string().uuid().required(),
+    }),
+  }),
+  usersController.delete
+);
+
 export default usersRouter;

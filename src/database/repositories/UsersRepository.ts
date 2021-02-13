@@ -25,6 +25,14 @@ class UsersRepository implements IUsersRepository {
     return savedUser;
   }
 
+  public async deleteUserById(id: string): Promise<User> {
+    const user = await this.ormRepository.findByIds([id]);
+
+    await this.ormRepository.remove(user);
+
+    return user[0];
+  }
+
   public async findById(id: string): Promise<User | undefined> {
     const user = await this.ormRepository.findOne(id);
 

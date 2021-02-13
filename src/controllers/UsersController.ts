@@ -5,6 +5,7 @@ import CreateUserService from '../services/CreateUserService';
 import BCryptHashProvider from '../providers/BCryptHashProvider';
 import UsersRepository from '../database/repositories/UsersRepository';
 import UpdateUserProfileService from '../services/UpdateUserProfileService';
+import DeleteUserService from '../services/DeleteUserService';
 
 export default class UsersController {
   public async create(request: Request, response: Response): Promise<Response> {
@@ -64,6 +65,31 @@ export default class UsersController {
       });
 
       return response.json(classToClass(updatedUser));
+    } catch (error) {
+      return response.status(400).json({ error: error.message });
+    }
+  }
+
+  public async delete(request: Request, response: Response) {
+    const usersRepository = new UsersRepository();
+    const bcryptHashProvider = new BCryptHashProvider();
+
+    const deleteUserService = new DeleteUserService(
+      usersRepository,
+      bcryptHashProvider
+    );
+
+    const { user_id } = request.params;
+
+    const { password } = request.body;
+
+    try {
+      const user = await deleteUserService.execute({
+        userId: user_id,
+        password,
+      });
+
+      return response.json(classToClass(user));
     } catch (error) {
       return response.status(400).json({ error: error.message });
     }
