@@ -8,16 +8,18 @@ export interface IMealCreation {
 
 export interface IMealListByUserAndDate {
   userId: string;
-  date: Date;
+  startDate: Date;
+  endDate: Date;
 }
 
 export default interface MealsRepository {
   create({ userId, name, date }: IMealCreation): Promise<Meal>;
 
-  // listByUserAndDate({
-  //   userId,
-  //   date,
-  // }: IMealListByUserAndDate): Promise<Meal[]> | undefined;
+  listByUserAndDate({
+    userId,
+    startDate,
+    endDate,
+  }: IMealListByUserAndDate): Promise<Meal[]> | undefined;
 
   // deleteById(mealId: string): Promise<Meal> | undefined;
 }

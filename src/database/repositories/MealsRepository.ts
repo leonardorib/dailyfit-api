@@ -1,4 +1,4 @@
-import { getRepository, Repository } from 'typeorm';
+import { getRepository, MoreThanOrEqual, Repository } from 'typeorm';
 import Meal from '../../models/Meal';
 import IMealsRepository, {
   IMealCreation,
@@ -12,11 +12,28 @@ export default class MealsRepository implements IMealsRepository {
     this.ormRepository = getRepository(Meal);
   }
 
-  public async create({ userId, name, date }: IMealCreation) {
+  public async create({ userId, name, date }: IMealCreation): Promise<Meal> {
     const meal = this.ormRepository.create({ user_id: userId, name, date });
 
     await this.ormRepository.save(meal);
 
     return meal;
+  }
+
+  public async listByUserAndDate({
+    userId,
+    startDate,
+    endDate,
+  }: IMealListByUserAndDate): Promise<Meal[]> {
+    const mealsFiltered = await this.ormRepository
+      .createQueryBuilder('meals')
+      .where('user_id = :userId', { userId: userId })
+      .andWhere('date BETWEEN :startDate and :endDate', {
+        startDate: startDate.toISOString(),
+        endDate: endDate.toISOString(),
+      })
+      .getMany();
+
+    return mealsFiltered;
   }
 }

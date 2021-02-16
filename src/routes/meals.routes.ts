@@ -9,6 +9,17 @@ const mealsRouter = Router();
 
 mealsRouter.use(authMiddleware);
 
+mealsRouter.get(
+  '/',
+  celebrate({
+    query: {
+      startDate: Joi.date().required(),
+      endDate: Joi.date().required().min(Joi.ref('startDate')),
+    },
+  }),
+  mealsController.list
+);
+
 mealsRouter.post(
   '/',
   celebrate({

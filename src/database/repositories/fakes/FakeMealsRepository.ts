@@ -21,4 +21,19 @@ export default class FakeMealsRepository implements IMealsRepository {
 
     return meal;
   }
+
+  public async listByUserAndDate({
+    userId,
+    startDate,
+    endDate,
+  }: IMealListByUserAndDate) {
+    const mealsFiltered = this.meals.filter(
+      (meal) =>
+        meal.user_id === userId &&
+        meal.date >= startDate &&
+        meal.date <= endDate
+    );
+
+    return mealsFiltered;
+  }
 }
