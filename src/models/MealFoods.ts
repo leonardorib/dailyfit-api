@@ -20,18 +20,31 @@ class MealFoods {
 
   @ManyToOne(() => Food)
   @JoinColumn({ name: 'food_id' })
-
   @Column()
   meal_id: string;
 
   @ManyToOne(() => Meal)
   @JoinColumn({ name: 'meal_id' })
-
   @Column()
   quantity: number;
 
   @Column()
   quantity_unit: string;
+
+  @Column()
+  energy_kcal: number;
+
+  @Column()
+  energy_kj: number;
+
+  @Column()
+  carbs: number;
+
+  @Column()
+  proteins: number;
+
+  @Column()
+  fats: number;
 
   @CreateDateColumn()
   created_at: Date;
