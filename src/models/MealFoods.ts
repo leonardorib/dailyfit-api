@@ -10,7 +10,7 @@ import {
 import Food from './Food';
 import Meal from './Meal';
 
-@Entity('foods')
+@Entity('meals_foods')
 class MealFoods {
   @PrimaryGeneratedColumn('uuid')
   id: string;
