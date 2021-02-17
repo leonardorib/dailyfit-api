@@ -9,6 +9,12 @@ export default class FoodsRepository implements IFoodsRepository {
     this.ormRepository = getRepository(Food);
   }
 
+  public async findById(foodId: string): Promise<Food | undefined> {
+    const foundFood = await this.ormRepository.findOne(foodId);
+
+    return foundFood;
+  }
+
   public async listByName(foodName: string): Promise<Food[] | undefined> {
     const foundFoods = await this.ormRepository
       .createQueryBuilder('foods')

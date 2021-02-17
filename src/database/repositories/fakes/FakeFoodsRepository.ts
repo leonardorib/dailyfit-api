@@ -48,6 +48,12 @@ export default class FakeFoodsRepository implements IFoodsRepository {
     ];
   }
 
+  public async findById(foodId: string): Promise<Food | undefined> {
+    const foundFood = this.foods.filter((food) => food.id === foodId);
+
+    return foundFood[0];
+  }
+
   public async listByName(foodName: string): Promise<Food[] | undefined> {
     const foundFoods = this.foods.filter((food) =>
       food.name.toLowerCase().includes(foodName.toLowerCase())
