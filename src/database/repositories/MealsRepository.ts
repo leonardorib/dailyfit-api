@@ -20,6 +20,12 @@ export default class MealsRepository implements IMealsRepository {
     return meal;
   }
 
+  public async findById(mealId: string): Promise<Meal | undefined> {
+    const meal = await this.ormRepository.findOne(mealId);
+
+    return meal;
+  }
+
   public async listByUserAndDate({
     userId,
     startDate,

@@ -22,6 +22,12 @@ export default class FakeMealsRepository implements IMealsRepository {
     return meal;
   }
 
+  public async findById(mealId: string): Promise<Meal | undefined> {
+    const meal = this.meals.find((meal) => meal.id === mealId);
+
+    return meal;
+  }
+
   public async listByUserAndDate({
     userId,
     startDate,
