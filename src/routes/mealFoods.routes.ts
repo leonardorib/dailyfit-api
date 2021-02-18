@@ -21,4 +21,14 @@ mealFoodsRouter.post(
   mealsFoodsController.create
 );
 
+mealFoodsRouter.delete(
+  '/:mealFoodId',
+  celebrate({
+    params: {
+      mealFoodId: Joi.string().uuid().required(),
+    },
+  }),
+  mealsFoodsController.delete
+);
+
 export default mealFoodsRouter;

@@ -24,4 +24,8 @@ export default interface IMealsFoodsRepository {
     proteins,
     fats,
   }: IMealFoodItemCreation): Promise<MealFood>;
+
+  findById(mealFoodId: string): Promise<MealFood | undefined>;
+
+  deleteById(mealFoodId: string): Promise<MealFood | undefined>;
 }

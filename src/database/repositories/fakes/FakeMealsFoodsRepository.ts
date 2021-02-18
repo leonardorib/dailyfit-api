@@ -5,10 +5,10 @@ import IMealsFoodsRepository, {
 import { v4 as uuid } from 'uuid';
 
 export default class FakeMealsFoodsRepository implements IMealsFoodsRepository {
-  private fakeMealsFoods: MealFood[];
+  private mealsFoods: MealFood[];
 
   constructor() {
-    this.fakeMealsFoods = [];
+    this.mealsFoods = [];
   }
 
   public async create({
@@ -40,8 +40,28 @@ export default class FakeMealsFoodsRepository implements IMealsFoodsRepository {
       }
     );
 
-    this.fakeMealsFoods.push(newMealFood);
+    this.mealsFoods.push(newMealFood);
 
     return newMealFood;
+  }
+
+  public async findById(mealFoodId: string): Promise<MealFood | undefined> {
+    const mealFound = this.mealsFoods.find(
+      (mealFood) => mealFood.id === mealFoodId
+    );
+
+    return mealFound;
+  }
+
+  public async deleteById(mealFoodId: string): Promise<MealFood | undefined> {
+    const mealFound = this.mealsFoods.find(
+      (mealFood) => mealFood.id === mealFoodId
+    );
+
+    this.mealsFoods = this.mealsFoods.filter(
+      (mealFood) => mealFood.id !== mealFoodId
+    );
+
+    return mealFound;
   }
 }

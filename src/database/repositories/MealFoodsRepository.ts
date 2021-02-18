@@ -38,4 +38,18 @@ export default class MealFoodsRepository implements IMealsFoodsRepository {
 
     return newMealFoodItem;
   }
+
+  public async findById(mealFoodId: string) {
+    const mealFound = await this.ormRepository.findOne(mealFoodId);
+
+    return mealFound;
+  }
+
+  public async deleteById(mealFoodId: string) {
+    const mealFound = await this.ormRepository.findOne(mealFoodId);
+
+    await this.ormRepository.remove(mealFound);
+
+    return mealFound;
+  }
 }
