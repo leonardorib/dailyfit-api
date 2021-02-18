@@ -46,11 +46,11 @@ export default class FakeMealsFoodsRepository implements IMealsFoodsRepository {
   }
 
   public async findById(mealFoodId: string): Promise<MealFood | undefined> {
-    const mealFound = this.mealsFoods.find(
+    const mealFoodFound = this.mealsFoods.find(
       (mealFood) => mealFood.id === mealFoodId
     );
 
-    return mealFound;
+    return mealFoodFound;
   }
 
   public async deleteById(mealFoodId: string): Promise<MealFood | undefined> {
@@ -63,5 +63,13 @@ export default class FakeMealsFoodsRepository implements IMealsFoodsRepository {
     );
 
     return mealFound;
+  }
+
+  public async listByMealId(mealId: string): Promise<MealFood[] | undefined> {
+    const mealFoodFound = this.mealsFoods.filter(
+      (mealFood) => mealFood.meal_id === mealId
+    );
+
+    return mealFoodFound;
   }
 }

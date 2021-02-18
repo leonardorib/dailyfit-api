@@ -28,4 +28,6 @@ export default interface IMealsFoodsRepository {
   findById(mealFoodId: string): Promise<MealFood | undefined>;
 
   deleteById(mealFoodId: string): Promise<MealFood | undefined>;
+
+  listByMealId(mealId: string): Promise<MealFood[] | undefined>;
 }

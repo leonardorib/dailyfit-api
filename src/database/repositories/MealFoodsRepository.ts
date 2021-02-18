@@ -46,10 +46,18 @@ export default class MealFoodsRepository implements IMealsFoodsRepository {
   }
 
   public async deleteById(mealFoodId: string) {
-    const mealFound = await this.ormRepository.findOne(mealFoodId);
+    const mealFoodFound = await this.ormRepository.findOne(mealFoodId);
 
-    await this.ormRepository.remove(mealFound);
+    await this.ormRepository.remove(mealFoodFound);
 
-    return mealFound;
+    return mealFoodFound;
+  }
+
+  public async listByMealId(mealId: string): Promise<MealFood[] | undefined> {
+    const mealFoodFound = await this.ormRepository.find({
+      where: { meal_id: mealId },
+    });
+
+    return mealFoodFound;
   }
 }
