@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import CreateMealService from '../services/CreateMealService';
 import ListMealsByUserAndDate from '../services/ListMealsByUserAndDate';
 import MealsRepository from '../database/repositories/MealsRepository';
+import MealFoodsRepository from '../database/repositories/MealFoodsRepository';
 
 export default class MealsController {
   public async create(request: Request, response: Response): Promise<Response> {
@@ -29,7 +30,11 @@ export default class MealsController {
     const endDate = new Date(request.query.endDate as string);
 
     const mealsRepository = new MealsRepository();
-    const listMealsByUserAndDate = new ListMealsByUserAndDate(mealsRepository);
+    const mealFoodsRepository = new MealFoodsRepository();
+    const listMealsByUserAndDate = new ListMealsByUserAndDate(
+      mealsRepository,
+      mealFoodsRepository
+    );
 
     try {
       const meals = await listMealsByUserAndDate.execute({

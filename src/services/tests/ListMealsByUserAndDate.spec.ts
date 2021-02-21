@@ -1,13 +1,19 @@
 import FakeMealsRepository from '../../database/repositories/fakes/FakeMealsRepository';
+import FakeMealsFoodsRepository from '../../database/repositories/fakes/FakeMealsFoodsRepository';
 import ListMealsByUserAndDate from '../ListMealsByUserAndDate';
 
 let listMealsByUserAndDate: ListMealsByUserAndDate;
 let fakeMealsRepository: FakeMealsRepository;
+let fakeMealsFoodsRepository: FakeMealsFoodsRepository;
 
 describe('List meals by user and date', () => {
   beforeEach(() => {
     fakeMealsRepository = new FakeMealsRepository();
-    listMealsByUserAndDate = new ListMealsByUserAndDate(fakeMealsRepository);
+    fakeMealsFoodsRepository = new FakeMealsFoodsRepository();
+    listMealsByUserAndDate = new ListMealsByUserAndDate(
+      fakeMealsRepository,
+      fakeMealsFoodsRepository
+    );
   });
 
   it('should be able to list meals filtered by user and date', async () => {
