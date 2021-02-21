@@ -42,6 +42,7 @@ export default class AddFoodToMealService {
 
     const proportionFactor = quantity / food.standard_quantity;
 
+    const name = food.name;
     const energy_kcal = proportionFactor * food.energy_kcal;
     const energy_kj = proportionFactor * food.energy_kj;
     const carbs = proportionFactor * food.carbs;
@@ -51,6 +52,7 @@ export default class AddFoodToMealService {
     const newMealItem = await this.mealFoodsRepository.create({
       mealId,
       foodId,
+      name,
       quantity,
       quantity_unit,
       carbs,

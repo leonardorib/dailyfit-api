@@ -18,6 +18,9 @@ class MealFoods {
   @Column()
   food_id: string;
 
+  @Column()
+  name: string;
+
   @ManyToOne(() => Food)
   @JoinColumn({ name: 'food_id' })
   @Column()

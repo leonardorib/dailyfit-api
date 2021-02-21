@@ -14,6 +14,7 @@ export default class MealFoodsRepository implements IMealsFoodsRepository {
   public async create({
     mealId,
     foodId,
+    name,
     quantity,
     quantity_unit,
     energy_kcal,
@@ -25,6 +26,7 @@ export default class MealFoodsRepository implements IMealsFoodsRepository {
     const newMealFoodItem = this.ormRepository.create({
       meal_id: mealId,
       food_id: foodId,
+      name,
       quantity,
       quantity_unit,
       energy_kcal,
