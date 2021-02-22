@@ -47,6 +47,12 @@ export default class MealFoodsRepository implements IMealsFoodsRepository {
     return mealFound;
   }
 
+  public async save(mealFoodItem: MealFood) {
+    const savedMealFood = await this.ormRepository.save(mealFoodItem);
+
+    return savedMealFood;
+  }
+
   public async deleteById(mealFoodId: string) {
     const mealFoodFound = await this.ormRepository.findOne(mealFoodId);
 

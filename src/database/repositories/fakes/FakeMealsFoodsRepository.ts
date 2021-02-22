@@ -55,6 +55,16 @@ export default class FakeMealsFoodsRepository implements IMealsFoodsRepository {
     return mealFoodFound;
   }
 
+  public async save(mealFoodItem: MealFood): Promise<MealFood | undefined> {
+    const mealFoodIndex = this.mealsFoods.findIndex(
+      (mealFoodInRepository) => mealFoodInRepository.id === mealFoodItem.id
+    );
+
+    this.mealsFoods[mealFoodIndex] = mealFoodItem;
+
+    return this.mealsFoods[mealFoodIndex];
+  }
+
   public async deleteById(mealFoodId: string): Promise<MealFood | undefined> {
     const mealFound = this.mealsFoods.find(
       (mealFood) => mealFood.id === mealFoodId

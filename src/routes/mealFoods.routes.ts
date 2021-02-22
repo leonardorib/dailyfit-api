@@ -21,6 +21,20 @@ mealFoodsRouter.post(
   mealsFoodsController.create
 );
 
+mealFoodsRouter.put(
+  '/:mealFoodId',
+  celebrate({
+    params: {
+      mealFoodId: Joi.string().uuid().required(),
+    },
+    body: {
+      foodId: Joi.string().uuid(),
+      quantity: Joi.number().greater(0),
+    },
+  }),
+  mealsFoodsController.update
+);
+
 mealFoodsRouter.delete(
   '/:mealFoodId',
   celebrate({
