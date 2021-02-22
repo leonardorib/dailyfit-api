@@ -23,11 +23,15 @@ class MealFoods {
 
   @ManyToOne(() => Food)
   @JoinColumn({ name: 'food_id' })
+  food: Food;
+
   @Column()
   meal_id: string;
 
   @ManyToOne(() => Meal)
   @JoinColumn({ name: 'meal_id' })
+  meal: Meal;
+
   @Column()
   quantity: number;
 
