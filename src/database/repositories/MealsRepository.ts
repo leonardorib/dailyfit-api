@@ -26,6 +26,14 @@ export default class MealsRepository implements IMealsRepository {
     return meal;
   }
 
+  public async deleteById(mealId: string): Promise<Meal | undefined> {
+    const meal = await this.ormRepository.findOne(mealId);
+
+    await this.ormRepository.remove(meal);
+
+    return meal;
+  }
+
   public async listByUserAndDate({
     userId,
     startDate,

@@ -23,5 +23,5 @@ export default interface MealsRepository {
     endDate,
   }: IMealListByUserAndDate): Promise<Meal[]> | undefined;
 
-  // deleteById(mealId: string): Promise<Meal> | undefined;
+  deleteById(mealId: string): Promise<Meal> | undefined;
 }

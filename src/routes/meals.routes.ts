@@ -31,4 +31,14 @@ mealsRouter.post(
   mealsController.create
 );
 
+mealsRouter.delete(
+  '/:mealId',
+  celebrate({
+    params: {
+      mealId: Joi.string().uuid().required(),
+    },
+  }),
+  mealsController.delete
+);
+
 export default mealsRouter;

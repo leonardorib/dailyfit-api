@@ -28,6 +28,14 @@ export default class FakeMealsRepository implements IMealsRepository {
     return meal;
   }
 
+  public async deleteById(mealId: string): Promise<Meal | undefined> {
+    const mealFound = this.meals.find((meal) => meal.id === mealId);
+
+    this.meals = this.meals.filter((meal) => meal.id !== mealId);
+
+    return mealFound;
+  }
+
   public async listByUserAndDate({
     userId,
     startDate,

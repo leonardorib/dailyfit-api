@@ -3,6 +3,7 @@ import CreateMealService from '../services/CreateMealService';
 import ListMealsByUserAndDate from '../services/ListMealsByUserAndDate';
 import MealsRepository from '../database/repositories/MealsRepository';
 import MealFoodsRepository from '../database/repositories/MealFoodsRepository';
+import DeleteMealByIdService from '../services/DeleteMealByIdService';
 
 export default class MealsController {
   public async create(request: Request, response: Response): Promise<Response> {
@@ -46,6 +47,23 @@ export default class MealsController {
       return response.json(meals);
     } catch (error) {
       return response.status(400).json({ error: error.message });
+    }
+  }
+
+  public async delete(request: Request, response: Response): Promise<Response> {
+    const userId = request.userId;
+
+    const { mealId } = request.params;
+
+    const mealsRepository = new MealsRepository();
+    const deleteMealById = new DeleteMealByIdService(mealsRepository);
+
+    try {
+      const deletedMeal = await deleteMealById.execute({ mealId, userId });
+
+      return response.json(deletedMeal);
+    } catch (error) {
+      return response.json({ error: error.message });
     }
   }
 }
