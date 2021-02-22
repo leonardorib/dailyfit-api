@@ -37,13 +37,28 @@ export default class ListMealsByUserAndDate {
 
     const mealsWithFoodItems = meals.map((meal) => ({
       ...(meal as Meal),
+      energy_kcal: 0 as number,
+      energy_kj: 0 as number,
+      carbs: 0 as number,
+      proteins: 0 as number,
+      fats: 0 as number,
       foods: [] as MealFoods[],
     }));
 
+    // Adds foods list array to it's corresponding meal and calculate calories and nutrients of the meal
     mealsWithFoodItems.forEach((meal) => {
       mealsFoodArrays.forEach((mealFoodArray) => {
         if (mealFoodArray.length > 0 && mealFoodArray[0].meal_id === meal.id) {
           meal.foods = mealFoodArray;
+
+          mealFoodArray.forEach((mealFood) => {
+            meal.energy_kcal =
+              Math.round((meal.energy_kcal + mealFood.energy_kcal) * 100) / 100;
+            meal.energy_kj += mealFood.energy_kj;
+            meal.carbs += mealFood.carbs;
+            meal.proteins += mealFood.proteins;
+            meal.fats += mealFood.fats;
+          });
         }
       });
     });

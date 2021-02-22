@@ -47,7 +47,20 @@ describe('List meals by user and date', () => {
       name: 'fake-meal-5',
     };
 
-    await fakeMealsRepository.create(mealToBeCreated1);
+    const meal1 = await fakeMealsRepository.create(mealToBeCreated1);
+    await fakeMealsFoodsRepository.create({
+      mealId: meal1.id,
+      foodId: 'dbd4888b-08b2-4656-8b27-4cb6c289252e',
+      name: 'Abacate',
+      quantity_unit: 'g',
+      quantity: 100,
+      carbs: 6,
+      proteins: 1.2,
+      fats: 8.4,
+      energy_kcal: 96,
+      energy_kj: 402,
+    });
+
     await fakeMealsRepository.create(mealToBeCreated2);
     await fakeMealsRepository.create(mealToBeCreated3);
     await fakeMealsRepository.create(mealToBeCreated4);
