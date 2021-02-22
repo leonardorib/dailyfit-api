@@ -15,6 +15,7 @@ describe('Delete meal food service', () => {
     const mealFood = await fakeMealFoodsRepository.create({
       mealId: 'fake-meal-id',
       foodId: 'fake-food-id',
+      name: 'fake-food-name',
       quantity: 50,
       quantity_unit: 'g',
       energy_kcal: 1000,
