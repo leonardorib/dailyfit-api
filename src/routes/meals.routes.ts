@@ -31,6 +31,19 @@ mealsRouter.post(
   mealsController.create
 );
 
+mealsRouter.put(
+  '/:mealId',
+  celebrate({
+    params: {
+      mealId: Joi.string().required().uuid(),
+    },
+    body: {
+      name: Joi.string().required(),
+    },
+  }),
+  mealsController.update
+);
+
 mealsRouter.delete(
   '/:mealId',
   celebrate({

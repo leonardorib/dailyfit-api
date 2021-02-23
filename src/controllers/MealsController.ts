@@ -4,6 +4,7 @@ import ListMealsByUserAndDate from '../services/ListMealsByUserAndDate';
 import MealsRepository from '../database/repositories/MealsRepository';
 import MealFoodsRepository from '../database/repositories/MealFoodsRepository';
 import DeleteMealByIdService from '../services/DeleteMealByIdService';
+import UpdateMealNameService from '../services/UpdateMealNameService';
 
 export default class MealsController {
   public async create(request: Request, response: Response): Promise<Response> {
@@ -47,6 +48,27 @@ export default class MealsController {
       return response.json(meals);
     } catch (error) {
       return response.status(400).json({ error: error.message });
+    }
+  }
+
+  public async update(request: Request, response: Response): Promise<Response> {
+    const { userId } = request;
+    const { mealId } = request.params;
+    const { name } = request.body;
+
+    const mealsRepository = new MealsRepository();
+    const updateMealName = new UpdateMealNameService(mealsRepository);
+
+    try {
+      const updatedMeal = await updateMealName.execute({
+        mealId,
+        userId,
+        name,
+      });
+
+      return response.json(updatedMeal);
+    } catch (error) {
+      return response.json({ error: error.message });
     }
   }
 

@@ -15,6 +15,8 @@ export interface IMealListByUserAndDate {
 export default interface MealsRepository {
   create({ userId, name, date }: IMealCreation): Promise<Meal>;
 
+  save(meal: Meal): Promise<Meal>;
+
   findById(mealId: string): Promise<Meal | undefined>;
 
   listByUserAndDate({
