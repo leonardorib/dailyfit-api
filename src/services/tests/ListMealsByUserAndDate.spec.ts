@@ -66,26 +66,26 @@ describe('List meals by user and date', () => {
     await fakeMealsRepository.create(mealToBeCreated4);
     await fakeMealsRepository.create(mealToBeCreated5);
 
-    const meals1 = await listMealsByUserAndDate.execute({
+    const response1 = await listMealsByUserAndDate.execute({
       userId: 'fake-user-id-1',
       startDate: new Date(2021, 0, 20),
       endDate: new Date(2021, 0, 24),
     });
 
-    const meals2 = await listMealsByUserAndDate.execute({
+    const response2 = await listMealsByUserAndDate.execute({
       userId: 'fake-user-id-3',
       startDate: new Date(2021, 0, 20),
       endDate: new Date(2021, 0, 24),
     });
 
-    const meals3 = await listMealsByUserAndDate.execute({
+    const response3 = await listMealsByUserAndDate.execute({
       userId: 'fake-user-id-3',
       startDate: new Date(2021, 0, 22),
       endDate: new Date(2021, 0, 24),
     });
 
-    expect(meals1).toHaveLength(1);
-    expect(meals2).toHaveLength(3);
-    expect(meals3).toHaveLength(2);
+    expect(response1.meals).toHaveLength(1);
+    expect(response2.meals).toHaveLength(3);
+    expect(response3.meals).toHaveLength(2);
   });
 });

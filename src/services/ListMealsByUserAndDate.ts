@@ -45,6 +45,15 @@ export default class ListMealsByUserAndDate {
       foods: [] as MealFoods[],
     }));
 
+    const response = {
+      energy_kcal: 0,
+      energy_kj: 0,
+      carbs: 0,
+      proteins: 0,
+      fats: 0,
+      meals: [],
+    };
+
     // Adds foods list array to it's corresponding meal and calculate calories and nutrients of the meal
     mealsWithFoodItems.forEach((meal) => {
       mealsFoodArrays.forEach((mealFoodArray) => {
@@ -59,10 +68,18 @@ export default class ListMealsByUserAndDate {
             meal.proteins += mealFood.proteins;
             meal.fats += mealFood.fats;
           });
+
+          response.energy_kcal += meal.energy_kcal;
+          response.energy_kj += meal.energy_kj;
+          response.carbs += meal.carbs;
+          response.proteins += meal.proteins;
+          response.fats += meal.fats;
         }
       });
     });
 
-    return mealsWithFoodItems;
+    response.meals = mealsWithFoodItems;
+
+    return response;
   }
 }
