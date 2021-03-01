@@ -52,6 +52,7 @@ export default class MealsRepository implements IMealsRepository {
         startDate: startDate.toISOString(),
         endDate: endDate.toISOString(),
       })
+      .orderBy('created_at', 'ASC')
       .getMany();
 
     return mealsFiltered;
