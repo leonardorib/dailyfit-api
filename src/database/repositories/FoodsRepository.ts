@@ -18,12 +18,16 @@ export default class FoodsRepository implements IFoodsRepository {
   public async listByName(foodName: string): Promise<Food[] | undefined> {
     const foundFoods = await this.ormRepository
       .createQueryBuilder('foods')
-      .where(`REPLACE(LOWER(name),', ','') LIKE :foodName`, {
-        foodName: `%${foodName
-          .toLowerCase()
-          .replace(/ /g, '')
-          .replace(/[^a-zA-Z ]/g, '')}%`,
-      })
+      .where(
+        `REPLACE(REPLACE(unaccent(LOWER(name)),', ',''),' ','') LIKE :foodName`,
+        {
+          foodName: `%${foodName
+            .toLowerCase()
+            .replace(/ /g, '')
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')}%`,
+        }
+      )
       .getMany();
 
     return foundFoods;
