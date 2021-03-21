@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 
 import FoodsRepository from '../database/repositories/FoodsRepository';
 import MealFoodsRepository from '../database/repositories/MealFoodsRepository';
@@ -9,7 +9,11 @@ import DeleteMealFoodService from '../services/DeleteMealFoodService';
 import UpdateMealFoodService from '../services/UpdateMealFoodService';
 
 export default class MealFoodsController {
-  public async create(request: Request, response: Response): Promise<Response> {
+  public async create(
+    request: Request,
+    response: Response,
+    next: NextFunction
+  ) {
     const foodsRepository = new FoodsRepository();
     const mealFoodsRepository = new MealFoodsRepository();
     const mealsRepository = new MealsRepository();
@@ -31,12 +35,15 @@ export default class MealFoodsController {
       });
       return response.json(newMealFoodItem);
     } catch (error) {
-      console.log(error);
-      return response.status(400).json({ error: error.message });
+      return next(error);
     }
   }
 
-  public async update(request: Request, response: Response) {
+  public async update(
+    request: Request,
+    response: Response,
+    next: NextFunction
+  ) {
     const { userId } = request;
     const { mealFoodId } = request.params;
     const { foodId, quantity } = request.body;
@@ -61,11 +68,15 @@ export default class MealFoodsController {
 
       return response.json(updatedMealFood);
     } catch (error) {
-      return response.json({ error: error.message });
+      return next(error);
     }
   }
 
-  public async delete(request: Request, response: Response) {
+  public async delete(
+    request: Request,
+    response: Response,
+    next: NextFunction
+  ) {
     const { mealFoodId } = request.params;
 
     const mealFoodsRepository = new MealFoodsRepository();
@@ -77,7 +88,7 @@ export default class MealFoodsController {
 
       return response.json(deletedMealFood);
     } catch (error) {
-      return response.json({ error: error.message });
+      return next(error);
     }
   }
 }

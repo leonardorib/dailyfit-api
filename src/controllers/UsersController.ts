@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import { classToClass } from 'class-transformer';
 
 import CreateUserService from '../services/CreateUserService';
@@ -8,7 +8,11 @@ import UpdateUserProfileService from '../services/UpdateUserProfileService';
 import DeleteUserService from '../services/DeleteUserService';
 
 export default class UsersController {
-  public async create(request: Request, response: Response): Promise<Response> {
+  public async create(
+    request: Request,
+    response: Response,
+    next: NextFunction
+  ): Promise<Response | void> {
     const { firstName, lastName, email, password } = request.body;
 
     const usersRepository = new UsersRepository();
@@ -29,11 +33,15 @@ export default class UsersController {
 
       return response.json(classToClass(user));
     } catch (error) {
-      return response.status(400).json({ error: error.message });
+      return next(error);
     }
   }
 
-  public async update(request: Request, response: Response) {
+  public async update(
+    request: Request,
+    response: Response,
+    next: NextFunction
+  ) {
     const userId = request.userId;
 
     const {
@@ -66,11 +74,15 @@ export default class UsersController {
 
       return response.json(classToClass(updatedUser));
     } catch (error) {
-      return response.status(400).json({ error: error.message });
+      return next(error);
     }
   }
 
-  public async delete(request: Request, response: Response) {
+  public async delete(
+    request: Request,
+    response: Response,
+    next: NextFunction
+  ) {
     const usersRepository = new UsersRepository();
     const bcryptHashProvider = new BCryptHashProvider();
 
@@ -91,7 +103,7 @@ export default class UsersController {
 
       return response.json(classToClass(user));
     } catch (error) {
-      return response.status(400).json({ error: error.message });
+      return next(error);
     }
   }
 }

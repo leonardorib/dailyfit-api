@@ -1,11 +1,15 @@
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import AuthenticateService from '../services/AuthenticateService';
 import BCryptHashProvider from '../providers/BCryptHashProvider';
 import UsersRepository from '../database/repositories/UsersRepository';
 import { classToClass } from 'class-transformer';
 
 export default class AuthController {
-  public async create(request: Request, response: Response) {
+  public async create(
+    request: Request,
+    response: Response,
+    next: NextFunction
+  ) {
     const bCryptHashProvider = new BCryptHashProvider();
     const usersRepository = new UsersRepository();
 
@@ -23,7 +27,7 @@ export default class AuthController {
 
       return response.json({ user: classToClass(user), token });
     } catch (error) {
-      return response.status(400).json({ error: error.message });
+      return next(error);
     }
   }
 }

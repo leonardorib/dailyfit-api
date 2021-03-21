@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import CreateMealService from '../services/CreateMealService';
 import ListMealsByUserAndDate from '../services/ListMealsByUserAndDate';
 import MealsRepository from '../database/repositories/MealsRepository';
@@ -7,7 +7,11 @@ import DeleteMealByIdService from '../services/DeleteMealByIdService';
 import UpdateMealNameService from '../services/UpdateMealNameService';
 
 export default class MealsController {
-  public async create(request: Request, response: Response): Promise<Response> {
+  public async create(
+    request: Request,
+    response: Response,
+    next: NextFunction
+  ): Promise<Response | void> {
     const mealsRepository = new MealsRepository();
     const createMeal = new CreateMealService(mealsRepository);
 
@@ -22,11 +26,15 @@ export default class MealsController {
 
       return response.json(meal);
     } catch (error) {
-      return response.status(400).json({ error: error.message });
+      return next(error);
     }
   }
 
-  public async list(request: Request, response: Response): Promise<Response> {
+  public async list(
+    request: Request,
+    response: Response,
+    next: NextFunction
+  ): Promise<Response | void> {
     const userId = request.userId;
     const startDate = new Date(request.query.startDate as string);
     const endDate = new Date(request.query.endDate as string);
@@ -47,11 +55,15 @@ export default class MealsController {
 
       return response.json(meals);
     } catch (error) {
-      return response.status(400).json({ error: error.message });
+      return next(error);
     }
   }
 
-  public async update(request: Request, response: Response): Promise<Response> {
+  public async update(
+    request: Request,
+    response: Response,
+    next: NextFunction
+  ): Promise<Response | void> {
     const { userId } = request;
     const { mealId } = request.params;
     const { name } = request.body;
@@ -68,24 +80,32 @@ export default class MealsController {
 
       return response.json(updatedMeal);
     } catch (error) {
-      return response.json({ error: error.message });
+      return next(error);
     }
   }
 
-  public async delete(request: Request, response: Response): Promise<Response> {
+  public async delete(
+    request: Request,
+    response: Response,
+    next: NextFunction
+  ): Promise<Response | void> {
     const userId = request.userId;
 
     const { mealId } = request.params;
 
     const mealsRepository = new MealsRepository();
-    const deleteMealById = new DeleteMealByIdService(mealsRepository);
+    const mealFoodsRepository = new MealFoodsRepository();
+    const deleteMealById = new DeleteMealByIdService(
+      mealsRepository,
+      mealFoodsRepository
+    );
 
     try {
       const deletedMeal = await deleteMealById.execute({ mealId, userId });
 
       return response.json(deletedMeal);
     } catch (error) {
-      return response.json({ error: error.message });
+      return next(error);
     }
   }
 }
