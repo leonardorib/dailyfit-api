@@ -15,7 +15,7 @@ export default class FakeMealsRepository implements IMealsRepository {
   public async create({ userId, name, date }: IMealCreation): Promise<Meal> {
     const meal = new Meal();
 
-    Object.assign(meal, { id: uuid(), user_id: userId, name, date });
+    Object.assign(meal, { id: uuid(), user_id: userId, name, date, mealFoods: [] });
 
     this.meals.push(meal);
 
