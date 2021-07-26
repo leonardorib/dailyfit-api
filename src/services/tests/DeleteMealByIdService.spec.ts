@@ -13,7 +13,6 @@ describe('Delete meal by id', () => {
     fakeMealsFoodsRepository = new FakeMealsFoodsRepository();
     deleteMealById = new DeleteMealByIdService(
       fakeMealsRepository,
-      fakeMealsFoodsRepository
     );
   });
 

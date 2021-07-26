@@ -12,7 +12,6 @@ describe('List meals by user and date', () => {
     fakeMealsFoodsRepository = new FakeMealsFoodsRepository();
     listMealsByUserAndDate = new ListMealsByUserAndDate(
       fakeMealsRepository,
-      fakeMealsFoodsRepository
     );
   });
 
