@@ -10,6 +10,16 @@ const mealsRouter = Router();
 mealsRouter.use(authMiddleware);
 
 mealsRouter.get(
+  '/:mealId',
+  celebrate({
+    params: {
+      mealId: Joi.string().required().uuid(),
+    },
+  }),
+  mealsController.get
+);
+
+mealsRouter.get(
   '/',
   celebrate({
     query: {

@@ -2,9 +2,9 @@ import { NextFunction, Request, Response } from 'express';
 import CreateMealService from '../services/CreateMealService';
 import ListMealsByUserAndDate from '../services/ListMealsByUserAndDate';
 import MealsRepository from '../database/repositories/MealsRepository';
-import MealFoodsRepository from '../database/repositories/MealFoodsRepository';
 import DeleteMealByIdService from '../services/DeleteMealByIdService';
 import UpdateMealNameService from '../services/UpdateMealNameService';
+import GetMealByIdService from '../services/GetMealByIdService';
 
 export default class MealsController {
   public async create(
@@ -17,12 +17,34 @@ export default class MealsController {
 
     const userId = request.userId;
 
-    console.log(userId);
-
     const { name, date } = request.body;
 
     try {
       const meal = await createMeal.execute({ userId, name, date });
+
+      return response.json(meal);
+    } catch (error) {
+      return next(error);
+    }
+  }
+
+  public async get(
+    request: Request,
+    response: Response,
+    next: NextFunction
+  ): Promise<Response | void> {
+    const userId = request.userId;
+
+    const { mealId } = request.params;
+
+    const mealsRepository = new MealsRepository();
+    const getMealById = new GetMealByIdService(mealsRepository);
+
+    try {
+      const meal = await getMealById.execute({
+        userId,
+        mealId,
+      });
 
       return response.json(meal);
     } catch (error) {
@@ -40,11 +62,7 @@ export default class MealsController {
     const endDate = new Date(request.query.endDate as string);
 
     const mealsRepository = new MealsRepository();
-    const mealFoodsRepository = new MealFoodsRepository();
-    const listMealsByUserAndDate = new ListMealsByUserAndDate(
-      mealsRepository,
-      mealFoodsRepository
-    );
+    const listMealsByUserAndDate = new ListMealsByUserAndDate(mealsRepository);
 
     try {
       const meals = await listMealsByUserAndDate.execute({
@@ -94,11 +112,7 @@ export default class MealsController {
     const { mealId } = request.params;
 
     const mealsRepository = new MealsRepository();
-    const mealFoodsRepository = new MealFoodsRepository();
-    const deleteMealById = new DeleteMealByIdService(
-      mealsRepository,
-      mealFoodsRepository
-    );
+    const deleteMealById = new DeleteMealByIdService(mealsRepository);
 
     try {
       const deletedMeal = await deleteMealById.execute({ mealId, userId });

@@ -8,6 +8,16 @@ const mealsFoodsController = new MealFoodsController();
 
 mealFoodsRouter.use(authMiddleware);
 
+mealFoodsRouter.get(
+	'/:mealFoodId',
+	celebrate({
+	  params: {
+		mealFoodId: Joi.string().required().uuid(),
+	  },
+	}),
+	mealsFoodsController.get
+  );
+
 mealFoodsRouter.post(
   '/',
   celebrate({

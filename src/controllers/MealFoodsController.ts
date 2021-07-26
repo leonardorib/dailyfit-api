@@ -4,6 +4,7 @@ import FoodsRepository from '../database/repositories/FoodsRepository';
 import MealFoodsRepository from '../database/repositories/MealFoodsRepository';
 import MealsRepository from '../database/repositories/MealsRepository';
 
+import GetMealFoodByIdService from '../services/GetMealFoodByIdService';
 import AddFoodToMealService from '../services/AddFoodToMealService';
 import DeleteMealFoodService from '../services/DeleteMealFoodService';
 import UpdateMealFoodService from '../services/UpdateMealFoodService';
@@ -34,6 +35,27 @@ export default class MealFoodsController {
         quantity_unit,
       });
       return response.json(newMealFoodItem);
+    } catch (error) {
+      return next(error);
+    }
+  }
+
+  public async get(
+    request: Request,
+    response: Response,
+    next: NextFunction
+  ): Promise<Response | void> {
+    const { mealFoodId } = request.params;
+
+    const mealFoodsRepository = new MealFoodsRepository();
+    const getMealFoodById = new GetMealFoodByIdService(mealFoodsRepository);
+
+    try {
+      const mealFood = await getMealFoodById.execute({
+        mealFoodId,
+      });
+
+      return response.json(mealFood);
     } catch (error) {
       return next(error);
     }
