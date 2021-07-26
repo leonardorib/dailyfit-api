@@ -6,10 +6,10 @@ import {
   UpdateDateColumn,
   ManyToOne,
   JoinColumn,
+  OneToOne,
 } from 'typeorm';
 import Food from './Food';
 import Meal from './Meal';
-
 @Entity('meals_foods')
 class MealFoods {
   @PrimaryGeneratedColumn('uuid')
@@ -21,14 +21,14 @@ class MealFoods {
   @Column()
   name: string;
 
-  @ManyToOne(() => Food)
+  @OneToOne((type) => Food, { eager: true, cascade: true })
   @JoinColumn({ name: 'food_id' })
   food: Food;
 
   @Column()
   meal_id: string;
 
-  @ManyToOne(() => Meal)
+  @ManyToOne((type) => Meal, (meal) => meal.mealFoods)
   @JoinColumn({ name: 'meal_id' })
   meal: Meal;
 

@@ -6,10 +6,11 @@ import {
   UpdateDateColumn,
   ManyToOne,
   JoinColumn,
+  OneToMany,
 } from 'typeorm';
+import MealFoods from './MealFoods';
 
 import User from './User';
-
 @Entity('meals')
 class Meal {
   @PrimaryGeneratedColumn('uuid')
@@ -24,6 +25,9 @@ class Meal {
 
   @Column()
   name: string;
+
+  @OneToMany(type => MealFoods, mealFood => mealFood.meal, {eager: true, cascade: true})
+  mealFoods: MealFoods[];
 
   @Column()
   date: Date;
