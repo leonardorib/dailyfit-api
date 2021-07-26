@@ -1,4 +1,4 @@
-import { getRepository, MoreThanOrEqual, Repository } from 'typeorm';
+import { getRepository, Repository } from 'typeorm';
 import Meal from '../../models/Meal';
 import IMealsRepository, {
   IMealCreation,
@@ -52,7 +52,9 @@ export default class MealsRepository implements IMealsRepository {
         startDate: startDate.toISOString(),
         endDate: endDate.toISOString(),
       })
-      .orderBy('created_at', 'ASC')
+	  .leftJoinAndSelect('meals.mealFoods', 'mealFoods')
+	  .leftJoinAndSelect('mealFoods.food', 'foods')
+	  .orderBy('meals.created_at', 'ASC')
       .getMany();
 
     return mealsFiltered;
