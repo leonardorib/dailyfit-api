@@ -28,6 +28,6 @@ app.use(function (
   return response.status(500).json({ message: error.message });
 });
 
-app.listen(3333, () => {
-  console.log('DailyFit server started on port 3333!');
+app.listen(3334, () => {
+  console.log('DailyFit server started on port 3334!');
 });
