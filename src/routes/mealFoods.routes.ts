@@ -24,7 +24,7 @@ mealFoodsRouter.post(
     body: {
       mealId: Joi.string().uuid().required(),
       foodId: Joi.string().uuid().required(),
-      quantity: Joi.number().required(),
+      quantity: Joi.number().required().greater(0).max(1000000000000),
       quantity_unit: Joi.string().required(),
     },
   }),
@@ -39,7 +39,7 @@ mealFoodsRouter.put(
     },
     body: {
       foodId: Joi.string().uuid(),
-      quantity: Joi.number().greater(0),
+      quantity: Joi.number().greater(0).max(1000000000000),
     },
   }),
   mealsFoodsController.update
