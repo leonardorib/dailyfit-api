@@ -5,13 +5,12 @@ import IHashProvider from '../providers/base/IHashProvider';
 
 interface IRequest {
   id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
   password: string;
+  newPassword: string;
+  newPasswordConfirmation: string;
 }
 
-export default class UpdateUserProfileService {
+export default class UpdatePasswordService {
   private usersRepository: IUsersRepository;
   private hashProvider: IHashProvider;
 
@@ -20,14 +19,13 @@ export default class UpdateUserProfileService {
     this.hashProvider = hashProvider;
   }
 
-  public async execute(userData: IRequest): Promise<User> {
+  public async execute(updatePasswordData: IRequest): Promise<User> {
     const {
       id,
-      firstName,
-      lastName,
-      email,
       password,
-    } = userData;
+      newPassword,
+      newPasswordConfirmation,
+    } = updatePasswordData;
 
     const user = await this.usersRepository.findById(id);
 
@@ -40,20 +38,13 @@ export default class UpdateUserProfileService {
       throw new AppError('Password does not match', 401);
     }
 
-    // Email must be unique
-	const isModifyingEmail = email !== user.email;
-
-    if (isModifyingEmail) {
-      const findUserByEmail = await this.usersRepository.findOneByEmail(email);
-
-      if (findUserByEmail) {
-        throw new AppError('Email already in use', 400);
+    if (newPassword !== newPasswordConfirmation) {
+        throw new AppError('Password confirmation does not match', 400);
       }
-    }
 
-    user.email = email;
-    user.first_name = firstName;
-    user.last_name = lastName;
+	const newPasswordHash = await this.hashProvider.createHash(newPassword);
+
+    user.password_hash = newPasswordHash;
 
     const updatedUser = await this.usersRepository.save(user);
 

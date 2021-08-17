@@ -35,13 +35,24 @@ usersRouter.put(
         lastName: Joi.string(),
         email: Joi.string().email(),
         password: Joi.string().required(),
-        newPassword: Joi.string().min(5),
-        newPasswordConfirmation: Joi.string().valid(Joi.ref('newPassword')),
       })
-      .with('newPassword', ['newPasswordConfirmation']),
   }),
   usersController.update
 );
+
+// Password Update
+usersRouter.put(
+	'/password',
+	celebrate({
+	  [Segments.BODY]: Joi.object()
+		.keys({
+		  password: Joi.string().required(),
+		  newPassword: Joi.string().min(5).required(),
+		  newPasswordConfirmation: Joi.string().valid(Joi.ref('newPassword')).required(),
+		})
+	}),
+	usersController.updatePassword
+  );
 
 // Account delete
 usersRouter.delete(

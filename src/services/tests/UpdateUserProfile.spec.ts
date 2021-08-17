@@ -85,62 +85,9 @@ describe('Update User Profile', () => {
         id: user1.id,
         firstName: 'Fulano',
         lastName: 'De Tal',
-        email: 'beltrano@email.com',
+        email: user2.email,
         password: 'fake-password',
       })
-    ).rejects.toBeInstanceOf(AppError);
-  });
-
-  it('should be able to update password', async () => {
-    const user = await createUserService.execute({
-      firstName: 'Fulano',
-      lastName: 'De Tal',
-      email: 'fulano@email.com',
-      password: 'fake-password',
-    });
-
-    const updatedUserData = {
-      id: user.id,
-      firstName: 'Beltrano',
-      lastName: 'Ciclano',
-      email: 'beltrano@email.com',
-      password: 'fake-password',
-      newPassword: 'new-fake-password',
-      newPasswordConfirmation: 'new-fake-password',
-    };
-
-    await updateUserProfileService.execute(updatedUserData);
-
-    const updatedUser = await fakeUsersRepository.findById(user.id);
-
-    await expect(
-      bCryptHashProvider.compareHash(
-        updatedUserData.newPassword,
-        updatedUser.password_hash
-      )
-    ).toBeTruthy();
-  });
-
-  it('should not be able to update password if new password confirmation does not match', async () => {
-    const user = await createUserService.execute({
-      firstName: 'Fulano',
-      lastName: 'De Tal',
-      email: 'fulano@email.com',
-      password: 'fake-password',
-    });
-
-    const updatedUserData = {
-      id: user.id,
-      firstName: 'Beltrano',
-      lastName: 'Ciclano',
-      email: 'beltrano@email.com',
-      password: 'fake-password',
-      newPassword: 'new-fake-password',
-      newPasswordConfirmation: 'new-fake-wrong-password',
-    };
-
-    await expect(
-      updateUserProfileService.execute(updatedUserData)
     ).rejects.toBeInstanceOf(AppError);
   });
 });

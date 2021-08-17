@@ -5,6 +5,7 @@ import CreateUserService from '../services/CreateUserService';
 import BCryptHashProvider from '../providers/BCryptHashProvider';
 import UsersRepository from '../database/repositories/UsersRepository';
 import UpdateUserProfileService from '../services/UpdateUserProfileService';
+import UpdatePasswordService from '../services/UpdatePasswordService';
 import DeleteUserService from '../services/DeleteUserService';
 
 export default class UsersController {
@@ -49,8 +50,6 @@ export default class UsersController {
       lastName,
       email,
       password,
-      newPassword,
-      newPasswordConfirmation,
     } = request.body;
 
     const usersRepository = new UsersRepository();
@@ -68,8 +67,41 @@ export default class UsersController {
         lastName,
         email,
         password,
-        newPassword,
-        newPasswordConfirmation,
+      });
+
+      return response.json(classToClass(updatedUser));
+    } catch (error) {
+      return next(error);
+    }
+  }
+
+  public async updatePassword(
+    request: Request,
+    response: Response,
+    next: NextFunction
+  ) {
+    const userId = request.userId;
+
+    const {
+      password,
+      newPassword,
+      newPasswordConfirmation,
+    } = request.body;
+
+    const usersRepository = new UsersRepository();
+    const bcryptHashProvider = new BCryptHashProvider();
+
+    const updatePassword = new UpdatePasswordService(
+      usersRepository,
+      bcryptHashProvider
+    );
+
+    try {
+      const updatedUser = await updatePassword.execute({
+        id: userId,
+        password,
+		newPassword,
+		newPasswordConfirmation,
       });
 
       return response.json(classToClass(updatedUser));
