@@ -40,7 +40,15 @@ export default class AddFoodToMealService {
       throw new AppError('Meal does not exist', 400);
     }
 
-    const proportionFactor = quantity / food.standard_quantity;
+    const existentMealFood = meal.mealFoods.find(
+      (mealFood) => mealFood.food_id === foodId
+    );
+
+    const finalQuantity = existentMealFood
+      ? quantity + existentMealFood.quantity
+      : quantity;
+
+    const proportionFactor = finalQuantity / food.standard_quantity;
 
     const name = food.name;
     const energy_kcal = proportionFactor * food.energy_kcal;
@@ -49,18 +57,29 @@ export default class AddFoodToMealService {
     const proteins = proportionFactor * food.proteins;
     const fats = proportionFactor * food.fats;
 
-    const newMealItem = await this.mealFoodsRepository.create({
+    const mealFoodData = {
       mealId,
       foodId,
       name,
-      quantity,
+      quantity: finalQuantity,
       quantity_unit,
       carbs,
       fats,
       proteins,
       energy_kcal,
       energy_kj,
-    });
+    };
+
+    if (existentMealFood) {
+      const updatedMealItem = await this.mealFoodsRepository.save({
+        ...existentMealFood,
+        ...mealFoodData,
+      });
+
+      return updatedMealItem;
+    }
+
+	const newMealItem = await this.mealFoodsRepository.create(mealFoodData);
 
     return newMealItem;
   }
