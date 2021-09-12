@@ -11,3 +11,6 @@ dist
 
 tmp/*
 !tmp/.gitkeep
+
+# Local mailing tests
+src/providers/tests/MailProvider/
