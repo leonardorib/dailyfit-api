@@ -14,8 +14,10 @@
     "express": "^4.17.1",
     "jest": "^26.6.3",
     "jsonwebtoken": "^8.5.1",
+    "nodemailer": "^6.6.3",
     "pg": "^8.5.1",
     "reflect-metadata": "^0.1.13",
+    "sparkpost": "^2.1.4",
     "ts-jest": "^26.5.1",
     "tsconfig-paths": "^3.9.0",
     "typeorm": "^0.2.31",
@@ -24,7 +26,7 @@
   "scripts": {
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
     "dev:server": "ts-node-dev --respawn --inspect --ignore-watch node_modules src/server.ts",
-	"prod:server": "node dist/server.js",
+    "prod:server": "node dist/server.js",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
     "test": "jest"
   },
@@ -41,6 +43,8 @@
     "@types/express": "^4.17.11",
     "@types/jest": "^26.0.20",
     "@types/node": "^14.14.25",
+    "@types/nodemailer": "^6.4.4",
+    "@types/sparkpost": "^2.1.5",
     "@types/uuid": "^8.3.0",
     "babel-jest": "^26.6.3",
     "babel-plugin-module-resolver": "^4.1.0",
