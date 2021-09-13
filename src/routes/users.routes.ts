@@ -22,6 +22,18 @@ usersRouter.post(
   usersController.create
 );
 
+// Forgot password
+usersRouter.post(
+	'/forgotpassword',
+	celebrate({
+	  [Segments.BODY]: Joi.object().keys({
+		email: Joi.string().email().required(),
+	  }),
+	}),
+	usersController.forgotPassword
+);
+
+
 // Checks authentication - Private routes
 usersRouter.use(authMiddleware);
 
