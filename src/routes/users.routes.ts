@@ -33,6 +33,19 @@ usersRouter.post(
 	usersController.forgotPassword
 );
 
+// Reset password
+usersRouter.post(
+	'/resetpassword',
+	celebrate({
+	  [Segments.BODY]: Joi.object().keys({
+		email: Joi.string().email().required(),
+		token: Joi.string().required(),
+		newPassword: Joi.string().required().min(5),
+        newPasswordConfirmation: Joi.string().required().valid(Joi.ref('newPassword')),
+	  }),
+	}),
+	usersController.resetPassword
+);
 
 // Checks authentication - Private routes
 usersRouter.use(authMiddleware);

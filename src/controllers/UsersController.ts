@@ -3,6 +3,7 @@ import { classToClass } from 'class-transformer';
 
 import CreateUserService from '../services/CreateUserService';
 import GenerateForgotPasswordTokenService from '../services/GenerateForgotPasswordTokenService';
+import ResetPasswordService from '../services/ResetPasswordService';
 import BCryptHashProvider from '../providers/BCryptHashProvider';
 import EtherealMailProvider from '../providers/EtherealMailProvider';
 import SparkpostMailProvider from '../providers/SparkpostMailProvider';
@@ -175,6 +176,34 @@ export default class UsersController {
           : '[DEVELOPMENT MODE] Password recovery test email has been sent successfully, check application logs';
 
       return response.json({ message: responseMessage });
+    } catch (error) {
+      return next(error);
+    }
+  }
+
+  public async resetPassword(
+    request: Request,
+    response: Response,
+    next: NextFunction
+  ) {
+    const usersRepository = new UsersRepository();
+	const tokensRepository = new TokensRepository();
+	const hashProvider = new BCryptHashProvider();
+
+    const { token, email, newPassword, newPasswordConfirmation } = request.body;
+
+    try {
+
+	  const resetPasswordService = new ResetPasswordService(usersRepository, tokensRepository, hashProvider)
+
+      const user = await resetPasswordService.execute({
+        email,
+		newPassword,
+		newPasswordConfirmation,
+		tokenValue: token,
+      });
+
+      return response.json(classToClass(user));
     } catch (error) {
       return next(error);
     }
