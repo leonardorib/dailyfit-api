@@ -1,3 +1,4 @@
+import { addHours, addMinutes, subMinutes } from 'date-fns';
 import Token from '../../models/Token';
 import GenerateForgotPasswordTokenService from '../GenerateForgotPasswordTokenService';
 import FakeTokensRepository from '../../database/repositories/fakes/FakeTokensRepository';
@@ -48,6 +49,8 @@ describe('Generate and send forgot password token', () => {
     });
 
     const sendMailSpy = jest.spyOn(etherealMailProvider, 'sendMail');
+	const currentMoment = Date.now();
+	const dateNowSpy = jest.spyOn(Date, 'now').mockImplementationOnce(() => currentMoment);
 
     const { token } = await generateForgotPasswordTokenService.execute({
       email: user.email,
@@ -63,10 +66,14 @@ describe('Generate and send forgot password token', () => {
       })
     );
     expect(sendMailSpy).toHaveReturned();
-    sendMailSpy.mockReset();
+    sendMailSpy.mockRestore();
+	dateNowSpy.mockRestore();
 
     expect(token).toBeInstanceOf(Token);
     expect(token.user_id).toBe(user.id);
+	const expectedExpiration = addHours(currentMoment, 1);
+	expect(token.expires_at.getTime()).toBeGreaterThan(subMinutes(expectedExpiration, 2).getTime());
+	expect(token.expires_at.getTime()).toBeLessThan(addMinutes(expectedExpiration, 2).getTime());
   });
 
   it('should update the existing token if a previous one was registered', async () => {
