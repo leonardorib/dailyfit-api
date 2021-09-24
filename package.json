@@ -28,7 +28,7 @@
     "dev:server": "ts-node-dev --respawn --inspect --ignore-watch node_modules src/server.ts",
     "prod:server": "node dist/server.js",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
-    "test": "jest"
+    "test": "jest --testTimeout=15000"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.13",
