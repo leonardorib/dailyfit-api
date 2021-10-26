@@ -54,7 +54,7 @@ export default class MealsRepository implements IMealsRepository {
       })
 	  .leftJoinAndSelect('meals.mealFoods', 'mealFoods')
 	  .leftJoinAndSelect('mealFoods.food', 'foods')
-	  .orderBy('meals.created_at', 'ASC')
+	  .orderBy('meals.created_at', 'DESC')
       .getMany();
 
     return mealsFiltered;
