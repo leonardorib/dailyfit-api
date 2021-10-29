@@ -1,0 +1,165 @@
+openapi: 3.0.0
+info:
+  title: Dailyfit API
+  description: Node.js API serving the [Dailyfit App](https://github.com/leonardorib/dailyfit-mobile).
+  version: 1.0.0
+servers:
+  - url: http://localhost:3334
+    description: Local development server
+  - url: https://api.dailyfit.leonardoribeiro.com
+    description: Main production server
+paths:
+  /auth:
+    post:
+      summary: Authenticates with an user account.
+      tags: ["Auth"]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+            example:
+              email: johndoe@gmail.com
+              password: some-secure-password-123
+      responses:
+        '200':
+          description: User information and JWT token
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    $ref: '#/components/schemas/User'
+                  token:
+                    type: string
+  /users:
+    post:
+      summary: Creates a new user.
+      tags: ["User"]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                passwordConfirmation:
+                  type: string
+            example:
+              firstName: John
+              lastName: Doe
+              email: johndoe@gmail.com
+              password: some-secure-password-123
+              passwordConfirmation: some-secure-password-123
+      responses:
+        '200':
+          description: User created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    put:
+      summary: Updates user profile data.
+      description: The user is identified through the  JWT token payload
+      tags: ["User"]
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                  example: John
+                lastName:
+                  type: string
+                  example: Doe
+                email:
+                  type: string
+                  example: johndoe@gmail.com
+                password:
+                  type: string
+                  example: some-secure-password-123
+      responses:
+        '200':
+          description: Updated user.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+  /users/password:
+    put:
+      summary: Updates user password.
+      description: The user is identified through the  JWT token payload
+      tags: ["User"]
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                newPassword:
+                  type: string
+                newPasswordConfirmation:
+                  type: string
+            example:
+              password: some-secure-password-123
+              newPassword: some-secure-password-123
+              newPasswordConfirmation: some-secure-password-123
+      responses:
+        '200':
+          description: User that had password updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        email:
+          type: string
+        created_at:
+          type: string
+        updated_at:
+          type: string
+      example:
+        id: "a20g9419-4e7e-4h42-91d4-737f899a42a1"
+        first_name: Leonardo
+        last_name: Ribeiro
+        email: leonardo.rib@hotmail.com
+        created_at: "2021-10-29T04:44:44.857Z"
+        updated_at: "2021-10-29T04:44:44.857Z"
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
