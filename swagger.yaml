@@ -380,10 +380,7 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/Nutrients'
-                  - type: array
-                    items:
-                      $ref: '#/components/schemas/Meal'
+                  - $ref: '#/components/schemas/ArrayOfMealsWithNutrients'
         '400':
           $ref: '#/components/responses/400-Validation'
         '401':
@@ -724,6 +721,36 @@ components:
               example: "2021-10-30T20:54:51.313Z"
               description: ISO8601 Date string
         - $ref: '#/components/schemas/CreatedAtAndUpdatedAt'
+    MealWithNutrientsAndMealFoods:
+      allOf:
+        - type: object
+          properties:
+            id:
+              type: string
+              example: faeff764-9c02-4f0a-9b11-881976a130e3
+            user_id:
+              type: string
+              example: 40aa3be3-30a4-43c3-afe8-c71edf967107
+            name:
+              type: string
+              example: "Breakfast"
+            date:
+              type: string
+              example: "2021-10-30T20:54:51.313Z"
+              description: ISO8601 Date string
+            mealFoods:
+              $ref: '#/components/schemas/ArrayOfMealFoodsWithFoodData'
+        - $ref: '#/components/schemas/Nutrients'
+        - $ref: '#/components/schemas/CreatedAtAndUpdatedAt'
+    ArrayOfMealsWithNutrients:
+      allOf:
+        - type: object
+          properties:
+            meals:
+              type: array
+              items:
+                $ref: '#/components/schemas/MealWithNutrientsAndMealFoods'
+        - $ref: '#/components/schemas/Nutrients'
     MealFood:
       allOf:
         - type: object
