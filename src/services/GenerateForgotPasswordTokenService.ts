@@ -36,7 +36,7 @@ export default class GenerateForgotPasswordTokenService {
     const user = await this.usersRepository.findOneByEmail(email);
 
     if (!user) {
-      throw new AppError('User does not exist', 400);
+      throw new AppError('User was not found', 404);
     };
 
 	const alreadyRegisteredToken = await this.tokensRepository.findByUserId(user.id);

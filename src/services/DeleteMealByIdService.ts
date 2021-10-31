@@ -26,7 +26,7 @@ export default class DeleteMealByIdService {
     const mealFound = await this.mealsRepository.findById(mealId);
 
     if (!mealFound) {
-      throw new AppError('Meals does not exist', 400);
+      throw new AppError('Meals was not found', 404);
     }
 
     if (mealFound.user_id !== userId) {

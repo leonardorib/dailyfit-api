@@ -36,7 +36,7 @@ export default class ListMealsByUserAndDate {
     const meal = await this.mealsRepository.findById(mealId);
 
     if (!meal) {
-      throw new AppError('Meal does not exist', 400);
+      throw new AppError('Meal does not exist', 404);
     }
 
     if (meal.user_id !== userId) {

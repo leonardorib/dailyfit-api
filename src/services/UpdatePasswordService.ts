@@ -29,6 +29,10 @@ export default class UpdatePasswordService {
 
     const user = await this.usersRepository.findById(id);
 
+	if (!user) {
+	  throw new AppError('User was not found', 404);
+	}
+
     const doesPasswordMatch = await this.hashProvider.compareHash(
       password,
       user.password_hash

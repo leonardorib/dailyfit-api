@@ -21,7 +21,7 @@ export default class DeleteUserService {
     const user = await this.usersRepository.findById(userId);
 
     if (!user) {
-      throw new AppError('User does not exist', 400);
+      throw new AppError('User was not found', 404);
     }
 
     const isPasswordCorrect = await this.hashProvider.compareHash(

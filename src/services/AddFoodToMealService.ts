@@ -31,13 +31,13 @@ export default class AddFoodToMealService {
     const food = await this.foodsRepository.findById(foodId);
 
     if (!food) {
-      throw new AppError('Food does not exist', 400);
+      throw new AppError('Food was not found', 404);
     }
 
     const meal = await this.mealsRepository.findById(mealId);
 
     if (!meal) {
-      throw new AppError('Meal does not exist', 400);
+      throw new AppError('Meal was not found', 404);
     }
 
     const existentMealFood = meal.mealFoods.find(

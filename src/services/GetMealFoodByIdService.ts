@@ -28,7 +28,7 @@ export default class ListMealsByUserAndDate {
     const mealFood = await this.mealFoodsRepository.findById(mealFoodId);
 
     if (!mealFood) {
-      throw new AppError('Meal food does not exist', 400);
+      throw new AppError('Meal food was not found', 404);
     }
 
 	return mealFood;

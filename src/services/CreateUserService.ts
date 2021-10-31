@@ -1,6 +1,7 @@
 import User from '../models/User';
 import IUsersRepository from '../database/repositories/base/IUsersRepository';
 import IHashProvider from '../providers/base/IHashProvider';
+import AppError from '../errors/AppError';
 
 interface IRequest {
   firstName: string;
@@ -28,7 +29,7 @@ export default class CreateUserService {
     const userExists = await this.usersRepository.findOneByEmail(email);
 
     if (userExists) {
-      throw new Error('Email already in use');
+      throw new AppError('Email already in use', 400);
     }
 
     const passwordHash = await this.hashProvider.createHash(password);

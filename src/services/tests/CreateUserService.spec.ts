@@ -1,6 +1,7 @@
 import CreateUserService from '../CreateUserService';
 import BCryptHashProvider from '../../providers/BCryptHashProvider';
 import FakeUsersRepository from '../../database/repositories/fakes/FakeUsersRepository';
+import AppError from '../../errors/AppError';
 
 it('should be able to create an user', async () => {
   const fakeUsersRepository = new FakeUsersRepository();
@@ -48,5 +49,5 @@ it('should not be able to create an user if the email is in use', async () => {
       email: 'fulano@email.com', // Same email
       password: 'fake-password',
     })
-  ).rejects.toThrowError();
+  ).rejects.toBeInstanceOf(AppError);
 });

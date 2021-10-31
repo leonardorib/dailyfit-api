@@ -2,6 +2,7 @@ import CreateUserService from '../CreateUserService';
 import AuthenticateService from '../AuthenticateService';
 import BCryptHashProvider from '../../providers/BCryptHashProvider';
 import FakeUsersRepository from '../../database/repositories/fakes/FakeUsersRepository';
+import AppError from '../../errors/AppError';
 
 it('should be able to authenticate an user', async () => {
   const bCryptHashProvider = new BCryptHashProvider();
@@ -58,7 +59,7 @@ it('should not be able to authenticate an user that does not exist', async () =>
       email: 'wrong.email@email.com',
       password: 'password',
     })
-  ).rejects.toThrowError();
+  ).rejects.toBeInstanceOf(AppError);
 });
 
 it('should not be able to authenticate with wrong password', async () => {
@@ -87,5 +88,5 @@ it('should not be able to authenticate with wrong password', async () => {
       email: 'email@email.com',
       password: 'wrong-password',
     })
-  ).rejects.toThrowError();
+  ).rejects.toBeInstanceOf(AppError);
 });

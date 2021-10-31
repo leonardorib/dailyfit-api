@@ -13,7 +13,7 @@ export default class DeleteMealFoodService {
     const mealFood = await this.mealFoodsRepository.findById(mealFoodId);
 
     if (!mealFood) {
-      throw new AppError('Meal food item does not exist', 400);
+      throw new AppError('Meal food item was not found', 404);
     }
 
     const deletedMealFood = await this.mealFoodsRepository.deleteById(

@@ -4,6 +4,7 @@ import authConfig from '../config/auth';
 import IUsersRepository from '../database/repositories/base/IUsersRepository';
 import IHashProvider from '../providers/base/IHashProvider';
 import { classToClass } from 'class-transformer';
+import AppError from '../errors/AppError';
 
 interface IRequest {
   email: string;
@@ -29,7 +30,7 @@ export default class AuthenticateService {
     const user = await this.usersRepository.findOneByEmail(email);
 
     if (!user) {
-      throw new Error('User does not exist or credentials are wrong');
+      throw new AppError('User does not exist or credentials are wrong', 400);
     }
 
     // Check password
@@ -39,7 +40,7 @@ export default class AuthenticateService {
     );
 
     if (!passwordMatch) {
-      throw new Error('User does not exist or credentials are wrong');
+		throw new AppError('User does not exist or credentials are wrong', 400);
     }
 
     const token = jwt.sign(
