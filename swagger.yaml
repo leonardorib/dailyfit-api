@@ -9,6 +9,8 @@ servers:
   - url: https://api.dailyfit.leonardoribeiro.com
     description: Main production server
 paths:
+
+  ### Auth
   /auth:
     post:
       summary: Authenticates with an user account.
@@ -28,7 +30,7 @@ paths:
               password: some-secure-password-123
       responses:
         '200':
-          description: User information and JWT token
+          description: Success. Returns user information and JWT token.
           content:
             application/json:
               schema:
@@ -38,10 +40,13 @@ paths:
                     $ref: '#/components/schemas/User'
                   token:
                     type: string
+                    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNzIyZGY0MWUtMzA3NS00NjIwLWE4ZGItMDYxYWI0ZDcxNTBhIiwiZmlyc3RfbmFtZSI6IkpvaG4iLCJsYXN0X25hbWUiOiJEb2UiLCJlbWFpbCI6ImpvaG5kb2VAZ21haWwuY29tIiwiY3JlYXRlZF9hdCI6IjIwMjEtMTAtMjlUMDU6MDM6NDIuNzMxWiIsInVwZGF0ZWRfYXQiOiIyMDIxLTEwLTI5VDA1OjQ5OjUxLjE4N1oifSwiaWF0IjoxNjM1NTU5MTkxLCJleHAiOjE2MzYxNjM5OTF9.ZlKMaj2UGvdgntim6yMdzoF8cvdtYwCHAyg17a7DSvk
+
+  ### Users
   /users:
     post:
       summary: Creates a new user.
-      tags: ["User"]
+      tags: ["Users"]
       requestBody:
         content:
           application/json:
@@ -68,15 +73,15 @@ paths:
               passwordConfirmation: some-secure-password-123
       responses:
         '200':
-          description: User created
+          description: Success. Returns the created user.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
     put:
       summary: Updates user profile data.
-      description: The user is identified through the  JWT token payload
-      tags: ["User"]
+      description: The user is identified through the  JWT token payload.
+      tags: ["Users"]
       security:
         - bearerAuth: []
       requestBody:
@@ -104,11 +109,97 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
+  /users/{userId}:
+     delete:
+      summary: Deletes an user by id.
+      tags:
+        - "Users"
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  example: some-secure-password-123
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+            example: a20f9419-4e6e-4e42-90d4-737f889a43a1
+          required: true
+          description: ID (uuid) of the user to delete
+      responses:
+        '200':
+          description: Deleted sucessfully. Returns the deleted user.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+
+  /users/forgotpassword:
+    post:
+      summary: Creates and sends a password reset token to a specified user email.
+      description: On production, check the email. On development mode, check the application logs.
+      tags: ["Users"]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: johndoe@gmail.com
+      responses:
+        '200':
+          description: Reset password token created and sent sucessfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Password recovery email has been sent successfully"
+  /users/resetpassword:
+    post:
+      summary: Resets an user password if a reset password token is provided.
+      tags: ["Users"]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: johndoe@gmail.com
+                token:
+                  type: string
+                  example: e173013b01418260c75dceab78b8b0a80120c895
+                newPassword:
+                  type: string
+                  example: "10203040"
+                newPasswordConfirmation:
+                  type: string
+                  example: "10203040"
+      responses:
+        '200':
+          description: Password updated sucessfully. Returns the user that had password updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
   /users/password:
     put:
       summary: Updates user password.
-      description: The user is identified through the  JWT token payload
-      tags: ["User"]
+      description: The user is identified through the  JWT token payload.
+      tags: ["Users"]
       security:
         - bearerAuth: []
       requestBody:
@@ -129,35 +220,427 @@ paths:
               newPasswordConfirmation: some-secure-password-123
       responses:
         '200':
-          description: User that had password updated
+          description: User that had password updated.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
+
+
+  ### Foods
+  /foods:
+   get:
+      summary: Gets a list of foods filtered by name.
+      tags:
+        - "Foods"
+      parameters:
+        - in: query
+          name: foodName
+          schema:
+            type: string
+            example: arroz
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Search was sucessfull. Returns an array with the foods found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArrayOfFoods'
+
+
+  ### Meals
+  /meals:
+    post:
+      summary: Creates a meal.
+      tags:
+        - "Meals"
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "Breakfast"
+                date:
+                  type: string
+                  example: "2021-10-30T20:54:51.313Z"
+                  description: ISO8601 Date string
+      responses:
+        '200':
+          description: Meal created successfully. Returns the Meal.
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/Meal'
+    get:
+      summary: List meals between two dates.
+      tags:
+        - "Meals"
+      parameters:
+        - in: query
+          name: startDate
+          required: true
+          schema:
+            type: string
+            example: "2021-02-27T02:14:07.968Z"
+            description: ISO8601 Date string
+        - in: query
+          name: endDate
+          required: true
+          schema:
+            type: string
+            example: "2021-03-01T23:14:07.968Z"
+            description: ISO8601 Date string
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Success. Returns an array of meals and total nutrients quantity.
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Nutrients'
+                  - type: array
+                    items:
+                      $ref: '#/components/schemas/Meal'
+  /meals/{mealId}:
+    get:
+      summary: Gets a meal by ID.
+      tags:
+        - "Meals"
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/mealId'
+      responses:
+        '200':
+          description: Meal found successfully. Returns the Meal data, list of meal food items on it, and the total nutrients quantity.
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/Meal'
+                - type: object
+                  properties:
+                    mealFoods:
+                      $ref: '#/components/schemas/ArrayOfMealFoodsWithFoodData'
+                - $ref: '#/components/schemas/Nutrients'
+    put:
+      summary: Updates meal name.
+      tags:
+        - "Meals"
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/mealId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "Breakfast"
+      responses:
+        '200':
+          description: Meal updated successfully. Returns the meal.
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/Meal'
+                - type: object
+                  properties:
+                    mealFoods:
+                      $ref: '#/components/schemas/ArrayOfMealFoodsWithFoodData'
+    delete:
+      summary: Deletes meal.
+      tags:
+        - "Meals"
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/mealId'
+      responses:
+        '200':
+          description: Meal deleted successfully. Returns the deleted Meal data, list of meal food items on it, and the total nutrients quantity.
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/Meal'
+                - type: object
+                  properties:
+                    mealFoods:
+                      $ref: '#/components/schemas/ArrayOfMealFoodsWithFoodData'
+                - $ref: '#/components/schemas/Nutrients'
+
+
+  ### Meal Foods
+  /mealfoods/{mealFoodId}:
+    get:
+      summary: Gets a meal food by ID.
+      tags:
+        - "Meal Foods"
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/mealFoodId'
+      responses:
+        '200':
+          description: Meal food found successfully. Returns the Meal Food.
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/MealFood'
+                - type: object
+                  properties:
+                    food:
+                      $ref: '#/components/schemas/Food'
+    delete:
+      summary: Deletes a meal food by ID.
+      tags:
+        - "Meal Foods"
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/mealFoodId'
+      responses:
+        '200':
+          description: Meal food deleted successfully. Returns the Meal Food.
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/MealFood'
+                - type: object
+                  properties:
+                    food:
+                      $ref: '#/components/schemas/Food'
+    put:
+      summary: Updated a meal food item with new quantity or food type.
+      tags:
+        - "Meal Foods"
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                foodId:
+                  type: string
+                  example: 696a9f2b-dafe-4b0c-b02d-7069190774e2
+                quantity:
+                  type: number
+                  example: 100
+      parameters:
+        - $ref: '#/components/parameters/mealFoodId'
+      responses:
+        '200':
+          description: Meal food updated successfully. Returns the Meal Food.
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/MealFood'
+                - type: object
+                  properties:
+                    food:
+                      $ref: '#/components/schemas/Food'
+  /mealfoods:
+    post:
+      summary: Adds food item (meal food) to a meal.
+      tags:
+        - "Meal Foods"
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                mealId:
+                  type: string
+                  example: 47826e94-b64a-4931-b280-0dd73a92ec0a
+                foodId:
+                  type: string
+                  example: d4cfd29b-812c-4b41-b01c-a19f164d52f3
+                quantity:
+                  type: number
+                  example: 350
+                quantity_unit:
+                  type: string
+                  example: g
+                  default: g
+                  description: For now, does not make a difference. In future releases it will be compatible with other units.
+      responses:
+        '200':
+          description: Meal food added successfully. Returns the Meal Food.
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/MealFood'
+                - type: object
+                  properties:
+                    food:
+                      $ref: '#/components/schemas/Food'
+
 components:
+  parameters:
+    mealId:
+      in: path
+      name: mealId
+      schema:
+        type: string
+        example: c20f9417-1e6g-2e45-70d2-337f889a43a2
+      required: true
+      description: ID (uuid) of the meal.
+    mealFoodId:
+      in: path
+      name: mealFoodId
+      schema:
+        type: string
+        example: a20f9419-4e6e-4e42-90d4-737f889a43a1
+      required: true
+      description: ID (uuid) of the meal food.
   schemas:
+    CreatedAtAndUpdatedAt:
+      allOf:
+      - type: object
+        properties:
+          created_at:
+            type: string
+            example: "2021-10-29T04:44:44.857Z"
+          updated_at:
+            type: string
+            example: "2021-10-29T04:44:44.857Z"
+    Nutrients:
+      allOf:
+      - type: object
+        properties:
+          energy_kcal:
+            type: number
+            example: 124
+          energy_kj:
+            type: number
+            example: 517
+          carbs:
+            type: number
+            example: 25.8
+          proteins:
+            type: number
+            example: 2.6
+          fats:
+            type: number
+            example: 1
     User:
-      type: object
-      properties:
-        id:
-          type: string
-        first_name:
-          type: string
-        last_name:
-          type: string
-        email:
-          type: string
-        created_at:
-          type: string
-        updated_at:
-          type: string
-      example:
-        id: "a20g9419-4e7e-4h42-91d4-737f899a42a1"
-        first_name: Leonardo
-        last_name: Ribeiro
-        email: leonardo.rib@hotmail.com
-        created_at: "2021-10-29T04:44:44.857Z"
-        updated_at: "2021-10-29T04:44:44.857Z"
+      allOf:
+        - type: object
+          properties:
+            id:
+              type: string
+              example: "a20g9419-4e7e-4h42-91d4-737f899a42a1"
+            first_name:
+              type: string
+              example: Leonardo
+            last_name:
+              type: string
+              example: Ribeiro
+            email:
+              type: string
+              example: leonardo.rib@hotmail.com
+        - $ref: '#/components/schemas/CreatedAtAndUpdatedAt'
+    Food:
+      allOf:
+        - type: object
+          properties:
+            id:
+              type: string
+              example: bf025758-6074-4986-b350-464866d5e3da
+            name:
+              type: string
+              example: "Arroz, integral, cozido"
+            standard_quantity:
+              type: integer
+              example: 100
+            standard_quantity_unit:
+              type: string
+              example: g
+        - $ref: '#/components/schemas/Nutrients'
+        - $ref: '#/components/schemas/CreatedAtAndUpdatedAt'
+    ArrayOfFoods:
+      allOf:
+        - type: array
+          items:
+            $ref: '#/components/schemas/Food'
+    Meal:
+      allOf:
+        - type: object
+          properties:
+            id:
+              type: string
+              example: faeff764-9c02-4f0a-9b11-881976a130e3
+            user_id:
+              type: string
+              example: 40aa3be3-30a4-43c3-afe8-c71edf967107
+            name:
+              type: string
+              example: "Breakfast"
+            date:
+              type: string
+              example: "2021-10-30T20:54:51.313Z"
+              description: ISO8601 Date string
+        - $ref: '#/components/schemas/CreatedAtAndUpdatedAt'
+    MealFood:
+      allOf:
+        - type: object
+          properties:
+            id:
+              type: string
+              example: bf025758-6074-4986-b350-464866d5e3da
+            name:
+              type: string
+              example: "Arroz, integral, cozido"
+            food_id:
+              type: string
+              example: kf025750-5073-3985-e351-364866d5e3dc
+            meal_id:
+              type: string
+              example: af225659-6084-4886-c351-364866d5e3db
+            quantity:
+              type: number
+              example: 100
+            quantity_unit:
+              type: string
+              example: g
+        - $ref: '#/components/schemas/Nutrients'
+        - $ref: '#/components/schemas/CreatedAtAndUpdatedAt'
+    MealFoodWithFoodData:
+      allOf:
+        - $ref: '#/components/schemas/MealFood'
+        - type: object
+          properties:
+            food:
+              $ref: '#/components/schemas/Food'
+    ArrayOfMealFoodsWithFoodData:
+      allOf:
+        - type: array
+          items:
+            $ref: '#/components/schemas/MealFoodWithFoodData'
   securitySchemes:
     bearerAuth:
       type: http
