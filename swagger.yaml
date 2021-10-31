@@ -4,10 +4,10 @@ info:
   description: Node.js API serving the [Dailyfit App](https://github.com/leonardorib/dailyfit-mobile).
   version: 1.0.0
 servers:
-  - url: http://localhost:3334
-    description: Local development server
   - url: https://api.dailyfit.leonardoribeiro.com
     description: Main production server
+  - url: http://localhost:3334
+    description: Local development server
 paths:
 
   ### Auth
