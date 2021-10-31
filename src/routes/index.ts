@@ -8,14 +8,19 @@ import foodsRouter from './foods.routes';
 import mealsRouter from './meals.routes';
 import mealFoodsRouter from './mealFoods.routes';
 
-const swaggerDocs = yaml.load('swagger.yaml');
-
 import { errors } from 'celebrate';
 
 const routes = Router();
 
-
-routes.use("/documentation", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+const swaggerDocs = yaml.load('swagger.yaml');
+routes.use(
+  '/documentation',
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerDocs, {
+    swaggerOptions: { defaultModelsExpandDepth: -1 },
+	customCss: "#swagger-ui{padding-bottom:40px;}",
+  })
+);
 
 routes.use('/users', usersRouter);
 routes.use('/auth', authRouter);
