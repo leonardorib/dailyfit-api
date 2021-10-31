@@ -19,6 +19,7 @@ routes.use(
   swaggerUi.setup(swaggerDocs, {
     swaggerOptions: { defaultModelsExpandDepth: -1 },
 	customCss: "#swagger-ui{padding-bottom:40px;}",
+	customSiteTitle: "Dailyfit | API Documentation",
   })
 );
 
