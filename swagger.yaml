@@ -548,7 +548,7 @@ paths:
               properties:
                 foodId:
                   type: string
-                  example: 696a9f2b-dafe-4b0c-b02d-7069190774e2
+                  example: 4644d4ae-20f9-4e12-aaff-105dfa49ab2e
                 quantity:
                   type: number
                   example: 100
@@ -590,7 +590,7 @@ paths:
                   example: 47826e94-b64a-4931-b280-0dd73a92ec0a
                 foodId:
                   type: string
-                  example: d4cfd29b-812c-4b41-b01c-a19f164d52f3
+                  example: 4644d4ae-20f9-4e12-aaff-105dfa49ab2e
                 quantity:
                   type: number
                   example: 350
